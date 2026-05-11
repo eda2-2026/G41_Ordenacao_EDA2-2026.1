@@ -1,19 +1,29 @@
 import os
 import json
 import sys
+import random
 from pathlib import Path
+from ordenacao.ordenacao import (
+    quicksort,
+    mergesort,
+    radix_sort_por_ano, 
+    heapsort,
+    registrarAvaliacao,
+    incrementar_emprestimo,
+    _garantir_campos_metricas,
+)
 import qdarktheme
 from datetime import datetime
 from PySide6.QtCore import Qt, QTimer, QSize
-from PySide6.QtGui import QPixmap, QColor
+from PySide6.QtGui import QPixmap, QColor, QCursor
 from PySide6.QtWidgets import (
     QMainWindow, QCalendarWidget, QVBoxLayout,
     QGridLayout, QFormLayout, QWidget, QFrame,
     QApplication, QPushButton, QLabel, QDialog,
-    QLineEdit, QSpinBox, QDateEdit, QListWidget,
+    QLineEdit, QComboBox, QSpinBox, QDateEdit, QListWidget,
     QDialogButtonBox, QMessageBox, QSplitter,
     QStackedWidget, QTableWidget, QTableWidgetItem,
-    QHeaderView, QHBoxLayout, QAbstractItemView
+    QHeaderView, QHBoxLayout, QAbstractItemView, QDoubleSpinBox, QMenu
 )
 
 CAMINHO_DB_FILES = Path(__file__).parent / "db_files"
@@ -36,13 +46,23 @@ class Aluno:
         self.endereco = endereco.title()
 
 class Livro:
-    def __init__(self, numeracao, titulo, genero, autor, editora, quantidade):
+    def __init__(
+        self, numeracao, titulo, genero, autor, editora, quantidade,
+        ano: int = 0,
+        nota_media: float = 0.0,
+        total_avaliacoes: int = 0,
+        contagem_emprestimos: int = 0,
+    ):
         self.numeracao = numeracao
         self.titulo = titulo.capitalize()
         self.genero = genero.capitalize()
         self.autor = autor.capitalize()
         self.editora = editora.capitalize()
         self.quantidade = quantidade
+        self.ano = ano
+        self.nota_media = nota_media
+        self.total_avaliacoes = total_avaliacoes
+        self.contagem_emprestimos = contagem_emprestimos
 
 class Biblioteca:
     def __init__(self):
@@ -53,8 +73,9 @@ class Biblioteca:
         self.emprestimos = self.importacao(EMPRESTIMOS)
         self.id_emprestimo = self.importacao(ID_EMPRESTIMO)
         self.historico_devolucoes = self.importacao(HISTORICO_DEVOLUCOES)
+
+        self._atribuir_notas_iniciais()
         
-        # Hooks de índice para implementação futura
         self.bst = None
         self.indice_invertido = None
         self.buscador_fuzzy = None
@@ -69,6 +90,30 @@ class Biblioteca:
     def exportacao(self, caminho: str, dados: dict):
         with open(caminho, "w", encoding="utf-8") as arq:
             json.dump(dados, arq, ensure_ascii=False, indent=2)
+
+    def _atribuir_notas_iniciais(self):
+        """Gera nota média inicial para livros sem avaliações existentes."""
+        mudou = False
+
+        for livro in self.info_livros.values():
+            if not isinstance(livro, dict):
+                continue
+
+            nota_media = livro.get("nota_media", 0.0)
+            total_avaliacoes = livro.get("total_avaliacoes", 0)
+
+            livro.setdefault("nota_media", 0.0)
+            livro.setdefault("total_avaliacoes", 0)
+            livro.setdefault("contagem_emprestimos", 0)
+
+            if total_avaliacoes == 0 and (not isinstance(nota_media, (int, float)) or nota_media <= 0.0):
+                nota_aleatoria = round(random.uniform(0.0, 5.0), 1)
+                livro["nota_media"] = nota_aleatoria
+                livro["total_avaliacoes"] = 1
+                mudou = True
+
+        if mudou:
+            self.exportacao(INFO_LIVROS, self.info_livros)
 
     def inicializar_indices(self):
         from indices.bst_livros import BSTBiblioteca
@@ -105,6 +150,9 @@ class Biblioteca:
 
     def cadastra_livro(self, numeracao, titulo, genero, autor, editora, qtd):
         livro = Livro(numeracao, titulo, genero, autor, editora, int(qtd) if isinstance(qtd, str) else qtd)
+        if livro.total_avaliacoes == 0 and livro.nota_media <= 0.0:
+            livro.nota_media = round(random.uniform(0.0, 5.0), 1)
+            livro.total_avaliacoes = 1
         self.info_livros[numeracao] = livro.__dict__
         self.id_livros.append(numeracao)
         self.exportacao(IDS_LIVROS, self.id_livros)
@@ -126,7 +174,18 @@ class Biblioteca:
     def altera_livro(self, numeracao, titulo, genero, autor, editora, qtd):
         if numeracao not in self.id_livros:
             return None
-        livro = Livro(numeracao, titulo, genero, autor, editora, qtd)
+        livro_existente = self.info_livros.get(numeracao, {})
+        livro = Livro(
+            numeracao,
+            titulo,
+            genero,
+            autor,
+            editora,
+            int(qtd) if isinstance(qtd, str) else qtd,
+            nota_media=livro_existente.get("nota_media", 0.0),
+            total_avaliacoes=livro_existente.get("total_avaliacoes", 0),
+            contagem_emprestimos=livro_existente.get("contagem_emprestimos", 0),
+        )
         self.info_livros[numeracao] = livro.__dict__
         self.exportacao(INFO_LIVROS, self.info_livros)
         if self.bst:
@@ -145,6 +204,13 @@ class Biblioteca:
         self.id_emprestimo[chave] = _id
         self.exportacao(EMPRESTIMOS, self.emprestimos)
         self.exportacao(ID_EMPRESTIMO, self.id_emprestimo)
+
+        for numeracao, dados in self.info_livros.items():
+            if isinstance(dados, dict) and dados.get("titulo", "").lower() == str(livro).lower():
+                incrementar_emprestimo(self.info_livros, numeracao)
+                self.exportacao(INFO_LIVROS, self.info_livros)
+                break
+
         return chave, self.emprestimos[chave]
 
     def fazer_devolucao(self, chave):
@@ -159,7 +225,6 @@ class Biblioteca:
         else:
             nome_aluno = str(aluno_info)
 
-        # Salva no histórico de devoluções
         chave_devolucao = f"DEV-{chave}"
         self.historico_devolucoes[chave_devolucao] = {
             "chave_emprestimo": chave,
@@ -169,11 +234,22 @@ class Biblioteca:
         }
         self.exportacao(HISTORICO_DEVOLUCOES, self.historico_devolucoes)
 
-        # Remove o empréstimo ativo
         self.emprestimos.pop(chave)
         self.id_emprestimo.pop(chave)
         self.exportacao(EMPRESTIMOS, self.emprestimos)
         self.exportacao(ID_EMPRESTIMO, self.id_emprestimo)
+ 
+    def avaliar_livro(self, livro_id: str, nota: float) -> dict | None:
+        resultado = registrarAvaliacao(self.info_livros, livro_id, nota)
+        if resultado:
+            self.exportacao(INFO_LIVROS, self.info_livros)
+        return resultado
+
+    def listar_livros_alfabetico(self, reverso: bool = False) -> list:
+        return ordenar_por_titulo(self.info_livros, reverso=reverso)
+
+    def listar_livros_por_ano(self, reverso: bool = False) -> list:
+        return radix_sort_por_ano(list(self.info_livros.values()), reverso=reverso)
  
 class JanelaPrincipal(QMainWindow):
 
@@ -181,10 +257,11 @@ class JanelaPrincipal(QMainWindow):
         super().__init__()
         self.setWindowTitle("Sistema de Biblioteca")
         
-        # Instancia biblioteca
         self.b1 = Biblioteca()
         
-        # Cria janelas secundárias
+        self.ordenacao_coluna = None  
+        self.ordenacao_reverso = False  
+        
         self.janelaCA = JanelaCadastraAluno(self.b1)
         self.janelaCL = JanelaCadastroLivro(self.b1)
         self.janelaAA = JanelaAteraAluno(self.b1)
@@ -192,25 +269,21 @@ class JanelaPrincipal(QMainWindow):
         self.janelaEP = JanelaEmprestimo(self.b1)
         self.janelaDV = JanelaDevolucao(self.b1)
         
-        # Cria layout principal com splitter
         self.splitter = QSplitter(Qt.Horizontal)
         
-        # Cria sidebar (painel esquerdo)
         self.sidebar = self._criar_sidebar()
         
-        # Cria stacked widget para os painéis (painel direito)
         self.stacked = QStackedWidget()
         self.painel_acervo = self._criar_painel_acervo()
         self.painel_alunos = self._criar_painel_alunos()
         self.painel_emprestimos = self._criar_painel_emprestimos()
         self.painel_devolucoes = self._criar_painel_devolucoes()
         
-        self.stacked.addWidget(self.painel_acervo)        # 0
-        self.stacked.addWidget(self.painel_alunos)        # 1
-        self.stacked.addWidget(self.painel_emprestimos)   # 2
-        self.stacked.addWidget(self.painel_devolucoes)    # 3
+        self.stacked.addWidget(self.painel_acervo)        
+        self.stacked.addWidget(self.painel_alunos)        
+        self.stacked.addWidget(self.painel_emprestimos)  
+        self.stacked.addWidget(self.painel_devolucoes)    
         
-        # Adiciona sidebar e stacked ao splitter
         self.splitter.addWidget(self.sidebar)
         self.splitter.addWidget(self.stacked)
         self.splitter.setSizes([220, 1280])
@@ -232,21 +305,18 @@ class JanelaPrincipal(QMainWindow):
         layout.setContentsMargins(0, 0, 0, 0)
         layout.setSpacing(0)
         
-        # Logo real do sistema
         logo_label = QLabel()
         pixmap = QPixmap("img/logo.png")
         pixmap = pixmap.scaled(160, 160, Qt.KeepAspectRatio, Qt.SmoothTransformation)
         logo_label.setPixmap(pixmap)
         logo_label.setAlignment(Qt.AlignCenter)
         layout.addWidget(logo_label)
-        # Texto abaixo da logo
         
         separador1 = QFrame()
         separador1.setFrameShape(QFrame.HLine)
         separador1.setStyleSheet("background: rgba(173, 73, 225, 0.2);")
         layout.addWidget(separador1)
         
-        # Seção ACERVO
         secao_acervo = QLabel("ACERVO")
         secao_acervo.setObjectName("section-label")
         secao_acervo.setStyleSheet(
@@ -255,7 +325,6 @@ class JanelaPrincipal(QMainWindow):
         )
         layout.addWidget(secao_acervo)
         
-        # Botões de navegação ACERVO
         self.btn_acervo = self._criar_botao_nav("📚 Acervo de Livros", True)
         self.btn_acervo.clicked.connect(lambda: self._switch_panel(0, self.btn_acervo))
         layout.addWidget(self.btn_acervo)
@@ -279,7 +348,6 @@ class JanelaPrincipal(QMainWindow):
         separador2.setStyleSheet("background: rgba(173, 73, 225, 0.2); margin: 8px 0;")
         layout.addWidget(separador2)
         
-        # Seção CADASTRO
         secao_cadastro = QLabel("CADASTRO")
         secao_cadastro.setObjectName("section-label")
         secao_cadastro.setStyleSheet(
@@ -339,15 +407,12 @@ class JanelaPrincipal(QMainWindow):
             b.style().unpolish(b)
             b.style().polish(b)
         
-        # Ativa botão clicado
         btn.setProperty("active", True)
         btn.style().unpolish(btn)
         btn.style().polish(btn)
         
-        # Troca painel
         self.stacked.setCurrentIndex(index)
         
-        # Recarrega dados se necessário
         if index == 0:
             self._atualizar_tabela_acervo()
         elif index == 1:
@@ -365,7 +430,6 @@ class JanelaPrincipal(QMainWindow):
         layout.setContentsMargins(16, 16, 16, 16)
         layout.setSpacing(12)
         
-        # Cards de métricas
         metrics_layout = QHBoxLayout()
         self.card_livros = self._criar_metric_card("LIVROS NO\nACERVO", "0", "Total de livros cadastrados")
         self.card_emprestimos = self._criar_metric_card("EMPRÉSTIMOS\nATIVOS", "0", "Livros em circulação")
@@ -382,7 +446,6 @@ class JanelaPrincipal(QMainWindow):
         metrics_layout.addWidget(self.card_disponiveis)
         layout.addLayout(metrics_layout)
         
-        # Barra de busca
         busca_layout = QHBoxLayout()
         self.search_bar = QLineEdit()
         self.search_bar.setObjectName("search-bar")
@@ -400,7 +463,6 @@ class JanelaPrincipal(QMainWindow):
         busca_layout.addWidget(btn_buscar)
         layout.addLayout(busca_layout)
         
-        # Status da busca
         self.status_label = QLabel()
         self.status_label.setObjectName("status-bar")
         self.status_label.setVisible(False)
@@ -410,7 +472,6 @@ class JanelaPrincipal(QMainWindow):
         )
         layout.addWidget(self.status_label)
         
-        # Filtros rápidos
         filtros_layout = QHBoxLayout()
         self.label_filtros = QLabel("Filtros:")
         self.label_filtros.setStyleSheet("color: rgba(255,255,255,0.7); font-size: 13px; font-weight: 500;")
@@ -428,21 +489,27 @@ class JanelaPrincipal(QMainWindow):
         filtros_layout.addWidget(self.btn_disponiveis)
         
         filtros_layout.addStretch()
+
         layout.addLayout(filtros_layout)
         
-        # Tabela de livros
         self.table_livros = QTableWidget()
-        self.table_livros.setColumnCount(6)
+        self.table_livros.setColumnCount(9)
         self.table_livros.setHorizontalHeaderLabels(
-            ["Num.", "Título", "Autor", "Gênero", "Qtd.", "Ações"]
+            ["Num.", "Título", "Autor", "Gênero", "Qtd.", "Nota", "Empr.", "Ano", "Ações"]
         )
         self.table_livros.setColumnWidth(0, 70)
         self.table_livros.setColumnWidth(1, 300)
         self.table_livros.setColumnWidth(2, 160)
         self.table_livros.setColumnWidth(3, 120)
-        self.table_livros.setColumnWidth(4, 70)
-        self.table_livros.setColumnWidth(5, 180)
-        self.table_livros.horizontalHeader().setSectionResizeMode(5, QHeaderView.Fixed)
+        self.table_livros.setColumnWidth(4, 80)
+        self.table_livros.setColumnWidth(5, 100)
+        self.table_livros.setColumnWidth(6, 110)
+        self.table_livros.setColumnWidth(7, 60)   
+        self.table_livros.setColumnWidth(8, 220) 
+        self.table_livros.horizontalHeader().setSectionResizeMode(8, QHeaderView.Fixed)
+        self.table_livros.setColumnWidth(7, 70)
+        self.table_livros.setColumnWidth(8, 180)
+        self.table_livros.horizontalHeader().setSectionResizeMode(8, QHeaderView.Fixed)
 
         self.table_livros.setAlternatingRowColors(False)
         self.table_livros.setStyleSheet("""
@@ -477,6 +544,8 @@ class JanelaPrincipal(QMainWindow):
         """)
         self.table_livros.setSelectionBehavior(QAbstractItemView.SelectRows)
         self.table_livros.horizontalHeader().setStretchLastSection(False)
+        self.table_livros.horizontalHeader().setSectionsClickable(True)
+        self.table_livros.horizontalHeader().sectionClicked.connect(self._ordenar_por_coluna)
         layout.addWidget(self.table_livros)
         
         return painel
@@ -488,7 +557,6 @@ class JanelaPrincipal(QMainWindow):
         layout.setContentsMargins(16, 16, 16, 16)
         layout.setSpacing(12)
         
-        # Barra de busca
         busca_layout = QHBoxLayout()
         self.search_alunos = QLineEdit()
         self.search_alunos.setObjectName("search-bar")
@@ -504,7 +572,6 @@ class JanelaPrincipal(QMainWindow):
         busca_layout.addWidget(btn_buscar)
         layout.addLayout(busca_layout)
         
-        # Tabela de alunos
         self.table_alunos = QTableWidget()
         self.table_alunos.setColumnCount(7)
         self.table_alunos.setHorizontalHeaderLabels(
@@ -708,69 +775,8 @@ class JanelaPrincipal(QMainWindow):
     
     def _atualizar_tabela_acervo(self):
         """Atualiza a tabela de acervo"""
-        self.table_livros.setRowCount(0)
-        livros_ordenados = sorted(
-            self.b1.info_livros.items(),
-            key=lambda x: int(x[1].get("numeracao", 0))
-            if str(x[1].get("numeracao", "0")).isdigit()
-            else 0
-        )
-        
-        for numeracao, livro in livros_ordenados:
-            row = self.table_livros.rowCount()
-            self.table_livros.insertRow(row)
-            
-            if isinstance(livro, dict):
-                item_num = QTableWidgetItem(str(livro.get("numeracao", "")))
-                item_num.setForeground(Qt.white)
-                item_num.setTextAlignment(Qt.AlignCenter)
-                self.table_livros.setItem(row, 0, item_num)
+        self._popular_tabela_livros(list(self.b1.info_livros.values()))
 
-                item_titulo = QTableWidgetItem(str(livro.get("titulo", "")))
-                item_titulo.setForeground(Qt.white)
-                item_titulo.setTextAlignment(Qt.AlignLeft | Qt.AlignVCenter)
-                self.table_livros.setItem(row, 1, item_titulo)
-
-                item_autor = QTableWidgetItem(str(livro.get("autor", "")))
-                item_autor.setForeground(Qt.white)
-                item_autor.setTextAlignment(Qt.AlignLeft | Qt.AlignVCenter)
-                self.table_livros.setItem(row, 2, item_autor)
-
-                item_genero = QTableWidgetItem(str(livro.get("genero", "")))
-                item_genero.setForeground(Qt.white)
-                item_genero.setTextAlignment(Qt.AlignCenter)
-                self.table_livros.setItem(row, 3, item_genero)
-
-                item_qtd = QTableWidgetItem(str(livro.get("quantidade", "")))
-                item_qtd.setForeground(Qt.white)
-                item_qtd.setTextAlignment(Qt.AlignCenter)
-                self.table_livros.setItem(row, 4, item_qtd)
-                
-                # Botões de ação
-                btn_container = QWidget()
-                btn_layout = QHBoxLayout(btn_container)
-                btn_layout.setContentsMargins(4, 2, 4, 2)
-                btn_layout.setSpacing(6)
-                
-                btn_emprestar = QPushButton("Emprestar")
-                btn_emprestar.setFixedWidth(88)
-                btn_emprestar.clicked.connect(
-                    lambda checked, n=numeracao: self._abrir_emprestimo(n)
-                )
-                
-                btn_editar = QPushButton("Editar")
-                btn_editar.setFixedWidth(72)
-                btn_editar.clicked.connect(
-                    lambda checked, n=numeracao: self._abrir_altera_livro(n)
-                )
-                
-                btn_layout.addWidget(btn_emprestar)
-                btn_layout.addWidget(btn_editar)
-                
-                self.table_livros.setCellWidget(row, 5, btn_container)
-
-            self._atualizar_cards()
-    
     def _atualizar_tabela_alunos(self):
         """Atualiza a tabela de alunos"""
         self.table_alunos.setRowCount(0)
@@ -947,16 +953,56 @@ class JanelaPrincipal(QMainWindow):
         self.status_label.setVisible(True)
 
     def _popular_tabela_livros(self, livros: list):
-        # Ordena por numeracao antes de popular
-        livros = sorted(
-            [l for l in livros if isinstance(l, dict)],
-            key=lambda l: int(l.get("numeracao", 0))
-            if str(l.get("numeracao", "0")).isdigit()
-            else 0
-        )
+        livros_filtrados = [l for l in livros if isinstance(l, dict)]
+
+        # Ordenação por coluna
+        if self.ordenacao_coluna is None:  # Ordem original por Numeração
+            livros_ordenados = quicksort(
+                livros_filtrados,
+                chave=lambda l: int(l.get("numeracao", 0)) if str(l.get("numeracao", "0")).isdigit() else 0,
+                reverso=False
+            )
+        elif self.ordenacao_coluna == 1:  # Título
+            livros_ordenados = quicksort(
+                livros_filtrados,
+                chave=lambda l: str(l.get("titulo") or "").lower(),
+                reverso=self.ordenacao_reverso
+            )
+        elif self.ordenacao_coluna == 2:  # Autor
+            livros_ordenados = quicksort(
+                livros_filtrados,
+                chave=lambda l: str(l.get("autor") or "").lower(),
+                reverso=self.ordenacao_reverso
+            )
+        elif self.ordenacao_coluna == 3:  # Gênero
+            livros_ordenados = quicksort(
+                livros_filtrados,
+                chave=lambda l: str(l.get("genero") or "").lower(),
+                reverso=self.ordenacao_reverso
+            )
+        elif self.ordenacao_coluna == 5:  # Nota Média
+            livros_ordenados = heapsort(
+                livros_filtrados,
+                chave=lambda l: float(l.get("nota_media") or 0.0),
+                reverso=self.ordenacao_reverso
+            )
+        elif self.ordenacao_coluna == 6:  # Empréstimos
+            livros_ordenados = quicksort(
+                livros_filtrados,
+                chave=lambda l: int(l.get("contagem_emprestimos", 0)),
+                reverso=self.ordenacao_reverso
+            )
+        elif self.ordenacao_coluna == 7:  # Ano
+            livros_ordenados = radix_sort_por_ano(livros_filtrados, reverso=self.ordenacao_reverso)
+        else:  # Fallback para numeração
+            livros_ordenados = quicksort(
+                livros_filtrados,
+                chave=lambda l: int(l.get("numeracao", 0)) if str(l.get("numeracao", "0")).isdigit() else 0,
+                reverso=False
+            )
 
         self.table_livros.setRowCount(0)
-        for livro in livros:
+        for livro in livros_ordenados:
             numeracao = livro.get("numeracao", "")
             row = self.table_livros.rowCount()
             self.table_livros.insertRow(row)
@@ -984,6 +1030,21 @@ class JanelaPrincipal(QMainWindow):
             item_qtd.setTextAlignment(Qt.AlignCenter)
             self.table_livros.setItem(row, 4, item_qtd)
 
+            item_nota = QTableWidgetItem(f"{livro.get('nota_media', 0.0):.2f}")
+            item_nota.setForeground(Qt.white)
+            item_nota.setTextAlignment(Qt.AlignCenter)
+            self.table_livros.setItem(row, 5, item_nota)
+
+            item_emprestimos = QTableWidgetItem(str(livro.get("contagem_emprestimos", 0)))
+            item_emprestimos.setForeground(Qt.white)
+            item_emprestimos.setTextAlignment(Qt.AlignCenter)
+            self.table_livros.setItem(row, 6, item_emprestimos)
+
+            item_ano = QTableWidgetItem(str(livro.get("ano", "")))
+            item_ano.setForeground(Qt.white)
+            item_ano.setTextAlignment(Qt.AlignCenter)
+            self.table_livros.setItem(row, 7, item_ano)
+
             btn_container = QWidget()
             btn_layout = QHBoxLayout(btn_container)
             btn_layout.setContentsMargins(4, 2, 4, 2)
@@ -1001,7 +1062,75 @@ class JanelaPrincipal(QMainWindow):
             )
             btn_layout.addWidget(btn_emprestar)
             btn_layout.addWidget(btn_editar)
-            self.table_livros.setCellWidget(row, 5, btn_container)
+            self.table_livros.setCellWidget(row, 8, btn_container)
+                
+    def _ordenar_por_coluna(self, col_index: int):
+        """Abre menu de contexto para ordenação da coluna clicada"""
+        colunas_permitidas = [1, 5, 6, 7]
+        colunas_texto = [1, 2, 3]
+        colunas_numericas = [5, 6, 7]
+        if col_index not in (colunas_texto + colunas_numericas):
+            return
+
+        menu = QMenu(self)
+        menu.setStyleSheet("QMenu { background-color: #1a1a2e; color: #AD49E1; border: 1px solid #AD49E1; } "
+                           "QMenu::item:selected { background-color: #AD49E1; color: white; }")
+
+        if col_index in colunas_texto:
+            label_asc = "Ordenar de A → Z"
+            label_desc = "Ordenar de Z → A"
+        elif col_index == 5:
+            label_asc = "Menor Nota"
+            label_desc = "Maior Nota"
+        elif col_index == 6:
+            label_asc = "Menos Populares"
+            label_desc = "Mais Populares"
+        elif col_index == 7:
+            label_asc = "Mais Antigos"
+            label_desc = "Mais Recentes"
+        else:
+            label_asc = "Menor para Maior"
+            label_desc = "Maior para Menor"
+
+        acao_asc = menu.addAction(label_asc)
+        acao_desc = menu.addAction(label_desc)
+        menu.addSeparator()
+        acao_limpar = menu.addAction("Limpar Ordenação")
+
+        acao = menu.exec(QCursor.pos())
+        if not acao:
+            return
+
+        direcao = "asc" if acao == acao_asc else "desc" if acao == acao_desc else None
+        self._executar_logica_ordenacao(col_index, direcao)
+                
+    def _executar_logica_ordenacao(self, col_index: int, direcao: str | None):
+        """Executa a lógica de ordenação baseada na coluna e direção"""
+        if direcao is None:  # Limpar ordenação
+            self.ordenacao_coluna = None
+            self.ordenacao_reverso = False
+            headers = ["Num.", "Título", "Autor", "Gênero", "Qtd.", "Nota", "Empr.", "Ano", "Ações"]
+            self.table_livros.setHorizontalHeaderLabels(headers)
+        else:
+            self.ordenacao_coluna = col_index
+            self.ordenacao_reverso = (direcao == "desc")
+            
+            headers = ["Num.", "Título", "Autor", "Gênero", "Qtd.", "Nota", "Empr.", "Ano", "Ações"]
+            if col_index == 1:  # Título
+                headers[col_index] = f"Título {'↓' if direcao == 'asc' else '↑'}"
+            elif col_index == 2:  # Autor
+                headers[col_index] = f"Autor {'↓' if direcao == 'asc' else '↑'}"
+            elif col_index == 3:  # Gênero
+                headers[col_index] = f"Gênero {'↓' if direcao == 'asc' else '↑'}"
+            elif col_index == 5:  # Nota
+                headers[col_index] = f"Nota {'↓' if direcao == 'asc' else '↑'}"
+            elif col_index == 6:  # Empréstimos
+                headers[col_index] = f"Empr. {'↓' if direcao == 'asc' else '↑'}"
+            elif col_index == 7:  # Ano
+                headers[col_index] = f"Ano {'↓' if direcao == 'asc' else '↑'}"
+            self.table_livros.setHorizontalHeaderLabels(headers)
+        
+        self._atualizar_tabela_acervo()
                 
     def _buscar_alunos(self):
         """Busca alunos por nome ou ID"""
@@ -1053,72 +1182,23 @@ class JanelaPrincipal(QMainWindow):
         self.search_bar.clear()
         self.status_label.setVisible(False)
         
-        # Desmarca todos os filtros
         self.btn_todos.setChecked(filtro == "todos")
         self.btn_disponiveis.setChecked(filtro == "disponiveis")
-        
-        self.table_livros.setRowCount(0)
-        livros_ordenados = sorted(
-            self.b1.info_livros.items(),
-            key=lambda x: int(x[1].get("numeracao", 0))
-            if str(x[1].get("numeracao", "0")).isdigit()
-            else 0
-        )
-        
-        for numeracao, livro in livros_ordenados:
-            if isinstance(livro, dict):
-                if filtro == "todos":
-                    incluir = True
-                elif filtro == "disponiveis":
-                    incluir = livro.get("quantidade", 0) > 0
-                else:
-                    incluir = True
-                
-                if incluir:
-                    row = self.table_livros.rowCount()
-                    self.table_livros.insertRow(row)
-                    
-                    item_num = QTableWidgetItem(str(livro.get("numeracao", "")))
-                    item_num.setForeground(Qt.white)
-                    item_num.setTextAlignment(Qt.AlignCenter)
-                    self.table_livros.setItem(row, 0, item_num)
 
-                    item_titulo = QTableWidgetItem(str(livro.get("titulo", "")))
-                    item_titulo.setForeground(Qt.white)
-                    item_titulo.setTextAlignment(Qt.AlignLeft | Qt.AlignVCenter)
-                    self.table_livros.setItem(row, 1, item_titulo)
+        livros_filtrados = []
+        for livro in self.b1.info_livros.values():
+            if not isinstance(livro, dict):
+                continue
+            if filtro == "todos":
+                incluir = True
+            elif filtro == "disponiveis":
+                incluir = livro.get("quantidade", 0) > 0
+            else:
+                incluir = True
+            if incluir:
+                livros_filtrados.append(livro)
 
-                    item_autor = QTableWidgetItem(str(livro.get("autor", "")))
-                    item_autor.setForeground(Qt.white)
-                    item_autor.setTextAlignment(Qt.AlignLeft | Qt.AlignVCenter)
-                    self.table_livros.setItem(row, 2, item_autor)
-
-                    item_genero = QTableWidgetItem(str(livro.get("genero", "")))
-                    item_genero.setForeground(Qt.white)
-                    item_genero.setTextAlignment(Qt.AlignCenter)
-                    self.table_livros.setItem(row, 3, item_genero)
-
-                    item_qtd = QTableWidgetItem(str(livro.get("quantidade", "")))
-                    item_qtd.setForeground(Qt.white)
-                    item_qtd.setTextAlignment(Qt.AlignCenter)
-                    self.table_livros.setItem(row, 4, item_qtd)
-                    
-                    btn_container = QWidget()
-                    btn_layout = QHBoxLayout(btn_container)
-                    btn_layout.setContentsMargins(4, 2, 4, 2)
-                    btn_layout.setSpacing(6)
-                    
-                    btn_emprestar = QPushButton("Emprestar")
-                    btn_emprestar.setFixedWidth(88)
-                    btn_emprestar.clicked.connect(lambda checked, n=numeracao: self._abrir_emprestimo(n))
-                    
-                    btn_editar = QPushButton("Editar")
-                    btn_editar.setFixedWidth(72)
-                    btn_editar.clicked.connect(lambda checked, n=numeracao: self._abrir_altera_livro(n))
-                    
-                    btn_layout.addWidget(btn_emprestar)
-                    btn_layout.addWidget(btn_editar)
-                    self.table_livros.setCellWidget(row, 5, btn_container)
+        self._popular_tabela_livros(livros_filtrados)
     
     def _abrir_emprestimo(self, numeracao: str):
         """Abre janela de empréstimo com livro pré-preenchido"""
@@ -1131,8 +1211,6 @@ class JanelaPrincipal(QMainWindow):
         """Abre janela de alteração de livro com dados pré-preenchidos"""
         livro = self.b1.info_livros.get(numeracao)
         if isinstance(livro, dict):
-            # Preencher campos (precisa acessar campos da janela)
-            # Para agora, apenas abre a janela
             pass
         self.janelaAL.show()
     
@@ -1143,13 +1221,68 @@ class JanelaPrincipal(QMainWindow):
     def _fazer_devolucao(self, chave: str):
         """Faz a devolução de um livro"""
         try:
+            emprestimo = self.b1.emprestimos.get(chave)
+            livro_titulo = ""
+            livro_id = None
+
+            if isinstance(emprestimo, dict):
+                livro_titulo = emprestimo.get("livro", "")
+                for numeracao, livro in self.b1.info_livros.items():
+                    if isinstance(livro, dict) and livro.get("titulo", "").lower() == str(livro_titulo).lower():
+                        livro_id = numeracao
+                        break
+
             self.b1.fazer_devolucao(chave)
+
+            if livro_id and self._perguntar_avaliacao(livro_titulo):
+                nota = self._abrir_janela_avaliacao(livro_titulo)
+                if nota is not None:
+                    try:
+                        self.b1.avaliar_livro(livro_id, nota)
+                        faz_msg_box("Avaliação registrada!", f"Você avaliou '{livro_titulo}' com {nota} estrelas.", False)
+                    except ValueError as e:
+                        faz_msg_box("Erro", str(e), True)
+
             faz_msg_box("Sucesso", "Devolução realizada com sucesso!", False)
             self._atualizar_tabela_emprestimos()
             self._atualizar_tabela_devolucoes()
             self._atualizar_cards()
         except KeyError:
             faz_msg_box("Erro", "Chave de empréstimo não encontrada!", True)
+    
+    def _perguntar_avaliacao(self, livro_titulo: str) -> bool:
+        pergunta = QMessageBox(self)
+        pergunta.setWindowTitle("Avaliação do Livro")
+        pergunta.setText(f"Deseja avaliar este livro?\n{livro_titulo}")
+        pergunta.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
+        pergunta.setDefaultButton(QMessageBox.Yes)
+        return pergunta.exec() == QMessageBox.Yes
+
+    def _abrir_janela_avaliacao(self, livro_titulo: str) -> float | None:
+        dialog = QDialog(self)
+        dialog.setWindowTitle("Avaliar Livro")
+        dialog.setMinimumSize(360, 180)
+        dialog.setStyleSheet(self.styleSheet())
+
+        layout = QFormLayout(dialog)
+        label = QLabel(f"Avalie '{livro_titulo}' (0-5 estrelas)")
+        layout.addRow(label)
+
+        nota_spin = QDoubleSpinBox()
+        nota_spin.setRange(0.0, 5.0)
+        nota_spin.setSingleStep(0.1)
+        nota_spin.setValue(5.0)
+        nota_spin.setDecimals(1)
+        layout.addRow("Nota (estrelas):", nota_spin)
+
+        b_box = QDialogButtonBox(QDialogButtonBox.Ok | QDialogButtonBox.Cancel)
+        b_box.accepted.connect(dialog.accept)
+        b_box.rejected.connect(dialog.reject)
+        layout.addWidget(b_box)
+
+        if dialog.exec() == QDialog.Accepted:
+            return float(nota_spin.value())
+        return None
     
     def config_style(self):
         """Configura o estilo visual"""
@@ -1208,6 +1341,10 @@ class JanelaPrincipal(QMainWindow):
             letter-spacing: 1px;
             border: none;
             padding: 6px 8px;
+            cursor: pointing_hand;
+        }
+        QHeaderView::section:hover {
+            background: rgba(173, 73, 225, 0.15);
         }
        QLineEdit#search-bar {
             background: rgba(255,255,255,0.05);
@@ -1723,19 +1860,76 @@ class JanelaDevolucao(QDialog):
         b_box = QDialogButtonBox(QDialogButtonBox.Ok | QDialogButtonBox.Cancel)
         layoutdv.addWidget(b_box)
 
-        b_box.accepted.connect(lambda: self.faz_slot(biblioteca.fazer_devolucao)())
+        self.biblioteca = biblioteca
+        b_box.accepted.connect(self.faz_slot(biblioteca.fazer_devolucao))
         b_box.rejected.connect(self.reject)
 
     def faz_slot(self, func):
         def slot():
-            chave_value = self.chave.value()  
+            chave_value = self.chave.value()
+            emprestimo = self.biblioteca.emprestimos.get(str(chave_value))
+            livro_titulo = ""
+            livro_id = None
+
+            if isinstance(emprestimo, dict):
+                livro_titulo = emprestimo.get("livro", "")
+                for numeracao, livro in self.biblioteca.info_livros.items():
+                    if isinstance(livro, dict) and livro.get("titulo", "").lower() == str(livro_titulo).lower():
+                        livro_id = numeracao
+                        break
+
             try:
-                func(str(chave_value))  
-                self.chave.clear()  
+                func(str(chave_value))
+                self.chave.clear()
+
+                if livro_id and self._perguntar_avaliacao(livro_titulo):
+                    nota = self._abrir_janela_avaliacao(livro_titulo)
+                    if nota is not None:
+                        try:
+                            self.biblioteca.avaliar_livro(livro_id, nota)
+                            faz_msg_box("Avaliação registrada!", f"Você avaliou '{livro_titulo}' com {nota} estrelas.", False)
+                        except ValueError as e:
+                            faz_msg_box("Erro", str(e), True)
+
                 faz_msg_box("Devolução Realizada!", "Devolução bem sucedida.", False)
+                self.accept()
             except KeyError:
                 faz_msg_box("Falha!", "Devolução mal sucedida.\nERRO: CHAVE NÃO ENCONTRADA", True)
         return slot
+
+    def _perguntar_avaliacao(self, livro_titulo: str) -> bool:
+        pergunta = QMessageBox(self)
+        pergunta.setWindowTitle("Avaliação do Livro")
+        pergunta.setText(f"Deseja avaliar este livro?\n{livro_titulo}")
+        pergunta.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
+        pergunta.setDefaultButton(QMessageBox.Yes)
+        return pergunta.exec() == QMessageBox.Yes
+
+    def _abrir_janela_avaliacao(self, livro_titulo: str) -> float | None:
+        dialog = QDialog(self)
+        dialog.setWindowTitle("Avaliar Livro")
+        dialog.setMinimumSize(360, 180)
+        dialog.setStyleSheet(self.styleSheet())
+
+        layout = QFormLayout(dialog)
+        label = QLabel(f"Avalie '{livro_titulo}' (0-5 estrelas)")
+        layout.addRow(label)
+
+        nota_spin = QDoubleSpinBox()
+        nota_spin.setRange(0.0, 5.0)
+        nota_spin.setSingleStep(0.1)
+        nota_spin.setValue(5.0)
+        nota_spin.setDecimals(1)
+        layout.addRow("Nota (estrelas):", nota_spin)
+
+        b_box = QDialogButtonBox(QDialogButtonBox.Ok | QDialogButtonBox.Cancel)
+        b_box.accepted.connect(dialog.accept)
+        b_box.rejected.connect(dialog.reject)
+        layout.addWidget(b_box)
+
+        if dialog.exec() == QDialog.Accepted:
+            return float(nota_spin.value())
+        return None
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
