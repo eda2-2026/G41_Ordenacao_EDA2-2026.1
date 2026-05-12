@@ -172,5 +172,11 @@
     "livro": "O Cortico",
     "aluno": "Carla Ferreira",
     "data_devolucao": "11/05/2026 20:29"
+  },
+  "DEV-710384": {
+    "chave_emprestimo": "710384",
+    "livro": "Esau E Jaco",
+    "aluno": "Xavier Neto",
+    "data_devolucao": "11/05/2026 23:33"
   }
 }

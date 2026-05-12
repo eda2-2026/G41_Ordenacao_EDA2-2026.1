@@ -42,11 +42,10 @@
     "autor": "Machado de Assis",
     "editora": "Penguin",
     "quantidade": 1,
-    "nota_media": 4.0,
-    "total_avaliacoes": 1,
+    "nota_media": 3.0,
+    "total_avaliacoes": 2,
     "contagem_emprestimos": 2,
     "ano": 1904
-
   },
   "0005": {
     "numeracao": "0005",
@@ -55,11 +54,10 @@
     "autor": "Aluisio Azevedo",
     "editora": "Atica",
     "quantidade": 4,
-     "nota_media": 4.47,
+    "nota_media": 4.47,
     "total_avaliacoes": 3,
     "contagem_emprestimos": 10,
     "ano": 1890
-
   },
   "0006": {
     "numeracao": "0006",
@@ -81,9 +79,9 @@
     "editora": "Atica",
     "quantidade": 3,
     "nota_media": 3.7,
-   "total_avaliacoes": 3,
-   "contagem_emprestimos": 4,
-   "ano": 1865
+    "total_avaliacoes": 3,
+    "contagem_emprestimos": 4,
+    "ano": 1865
   },
   "0008": {
     "numeracao": "0008",
@@ -93,9 +91,9 @@
     "editora": "Atica",
     "quantidade": 2,
     "nota_media": 0.9,
-   "total_avaliacoes": 1,
-   "contagem_emprestimos": 0,
-   "ano": 1875
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1875
   },
   "0009": {
     "numeracao": "0009",
@@ -104,11 +102,10 @@
     "autor": "Jose de Alencar",
     "editora": "Atica",
     "quantidade": 3,
-     "nota_media": 4.7,
-   "total_avaliacoes": 1,
-   "contagem_emprestimos": 0,
-   "ano": 1857
-
+    "nota_media": 4.7,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1857
   },
   "0010": {
     "numeracao": "0010",
@@ -117,10 +114,10 @@
     "autor": "Joaquim Manuel de Macedo",
     "editora": "Moderna",
     "quantidade": 2,
-   "nota_media": 0.1,
-   "total_avaliacoes": 1,
-   "contagem_emprestimos": 0,
-   "ano": 1844
+    "nota_media": 0.1,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1844
   },
   "0011": {
     "numeracao": "0011",
@@ -129,11 +126,10 @@
     "autor": "Jorge Amado",
     "editora": "Companhia das Letras",
     "quantidade": 5,
-   "nota_media": 1.1,
-   "total_avaliacoes": 1,
-   "contagem_emprestimos": 0,
-   "ano": 1937
-
+    "nota_media": 1.1,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1937
   },
   "0012": {
     "numeracao": "0012",
@@ -143,10 +139,9 @@
     "editora": "Companhia das Letras",
     "quantidade": 3,
     "nota_media": 3.3,
-   "total_avaliacoes": 1,
-   "contagem_emprestimos": 0,
-   "ano": 1958
-
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1958
   },
   "0013": {
     "numeracao": "0013",
@@ -156,9 +151,9 @@
     "editora": "Companhia das Letras",
     "quantidade": 2,
     "nota_media": 4.3,
-   "total_avaliacoes": 1,
-   "contagem_emprestimos": 0,
-   "ano": 1943
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1943
   },
   "0014": {
     "numeracao": "0014",
@@ -167,10 +162,10 @@
     "autor": "Jorge Amado",
     "editora": "Companhia das Letras",
     "quantidade": 2,
-     "nota_media": 1.7,
-   "total_avaliacoes": 1,
-   "contagem_emprestimos": 0,
-   "ano": 1977
+    "nota_media": 1.7,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1977
   },
   "0015": {
     "numeracao": "0015",
@@ -179,11 +174,10 @@
     "autor": "Graciliano Ramos",
     "editora": "Record",
     "quantidade": 4,
-   "nota_media": 0.8,
-   "total_avaliacoes": 1,
-   "contagem_emprestimos": 0,
-   "ano": 1938
-
+    "nota_media": 0.8,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1938
   },
   "0016": {
     "numeracao": "0016",
@@ -192,11 +186,10 @@
     "autor": "Graciliano Ramos",
     "editora": "Record",
     "quantidade": 2,
-   "nota_media": 4.9,
-   "total_avaliacoes": 1,
-   "contagem_emprestimos": 1,
-   "ano": 1934
-
+    "nota_media": 4.9,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 1,
+    "ano": 1934
   },
   "0017": {
     "numeracao": "0017",
@@ -206,10 +199,9 @@
     "editora": "Record",
     "quantidade": 2,
     "nota_media": 0.7,
-   "total_avaliacoes": 1,
-   "contagem_emprestimos": 0,
-   "ano": 1936
-
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1936
   },
   "0018": {
     "numeracao": "0018",
@@ -219,9 +211,9 @@
     "editora": "Nova Fronteira",
     "quantidade": 3,
     "nota_media": 2.33,
-   "total_avaliacoes": 3,
-   "contagem_emprestimos": 2,
-   "ano": 1956
+    "total_avaliacoes": 3,
+    "contagem_emprestimos": 2,
+    "ano": 1956
   },
   "0019": {
     "numeracao": "0019",
@@ -231,9 +223,9 @@
     "editora": "Nova Fronteira",
     "quantidade": 2,
     "nota_media": 4.2,
-   "total_avaliacoes": 1,
-   "contagem_emprestimos": 0,
-   "ano": 1946
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1946
   },
   "0020": {
     "numeracao": "0020",
@@ -243,9 +235,9 @@
     "editora": "Nova Fronteira",
     "quantidade": 2,
     "nota_media": 3.2,
-   "total_avaliacoes": 1,
-   "contagem_emprestimos": 0,
-   "ano": 1962
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1962
   },
   "0021": {
     "numeracao": "0021",
@@ -291,9 +283,9 @@
     "editora": "Rocco",
     "quantidade": 2,
     "nota_media": 0.7,
-   "total_avaliacoes": 1,
-   "contagem_emprestimos": 0,
-   "ano": 1960
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1960
   },
   "0025": {
     "numeracao": "0025",
@@ -303,10 +295,9 @@
     "editora": "Martins Fontes",
     "quantidade": 4,
     "nota_media": 2.2,
-   "total_avaliacoes": 1,
-   "contagem_emprestimos": 0,
-   "ano": 1954
-
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1954
   },
   "0026": {
     "numeracao": "0026",
@@ -459,7 +450,7 @@
     "autor": "George Orwell",
     "editora": "Companhia das Letras",
     "quantidade": 3,
-    "nota_media": 2.2,  
+    "nota_media": 2.2,
     "total_avaliacoes": 1,
     "contagem_emprestimos": 0,
     "ano": 1945
@@ -1483,8 +1474,8 @@
     "total_avaliacoes": 1,
     "contagem_emprestimos": 0,
     "ano": 1883
-  }, 
-   "0124": {
+  },
+  "0124": {
     "numeracao": "0124",
     "titulo": "20000 Leguas Submarinas",
     "genero": "Aventura",
@@ -1983,7 +1974,7 @@
     "autor": "Fiodor Dostoievski",
     "editora": "Editora 34",
     "quantidade": 2,
-    "nota_media":2.0,
+    "nota_media": 2.0,
     "total_avaliacoes": 1,
     "contagem_emprestimos": 0,
     "ano": 1866
@@ -2420,4 +2411,4 @@
     "contagem_emprestimos": 0,
     "ano": 2000
   }
-} 
+}

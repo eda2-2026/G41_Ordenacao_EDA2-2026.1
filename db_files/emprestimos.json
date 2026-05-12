@@ -1,17 +1,4 @@
 {
-  "710384": {
-    "aluno": {
-      "id": "24",
-      "nome": "Xavier Neto",
-      "serie": "8",
-      "turno": "Tarde",
-      "idade": "13",
-      "contato": "935678901",
-      "endereco": "Rua dos Navegantes, 11"
-    },
-    "livro": "Esau E Jaco",
-    "devolucao": "2000-01-01"
-  },
   "277420": {
     "aluno": {
       "id": "2",

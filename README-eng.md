@@ -13,7 +13,7 @@
 
 ---
 ## 📹 Video explaining the project
-[Vídeo do youtube](https://youtu.be/dPdShpI-ZTY)
+[Vídeo do youtube](https://youtu.be/UAIRmwX32W8?si=Yz6uVB2m9AqBAE1p)
 
 
 ## 📝 Description
@@ -37,11 +37,13 @@ The major highlight of this update is the Sorting Module, which utilizes differe
 ## 🌐 Sorting Demonstration
 
 <p align="center">
-  <img src="https://i.postimg.cc/SQrYLNBB/image.png" width="600">
+  <img src="https://i.postimg.cc/SNcGH7Z9/image.png" width="600">
   <br></br>
-  <img src="https://i.postimg.cc/nVRccjbv/image.png" width="600">
+  <img src="https://i.postimg.cc/3RPgcdmp/image.png" width="600">
   <br></br>
-  <img src="https://i.postimg.cc/tJwjd6pS/image.png" width="600">
+  <img src="https://i.postimg.cc/ncKv3VzW/image.png" width="600">
+  <br></br>
+  <img src="https://i.postimg.cc/L5tZQvH8/image.png" width="600">
 </p>
 
 ## 🎯 Features
