@@ -5,7 +5,6 @@ import random
 from pathlib import Path
 from ordenacao.ordenacao import (
     quicksort,
-    mergesort,
     radix_sort_por_ano, 
     heapsort,
     registrarAvaliacao,

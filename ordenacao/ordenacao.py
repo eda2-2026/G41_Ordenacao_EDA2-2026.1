@@ -72,56 +72,6 @@ def _merge(esq: list, dir: list, chave, reverso: bool) -> list:
     return resultado
 
 
-def mergesort(lista: list, chave=None, reverso: bool = False) -> list:
-
-    if chave is None:
-        chave = lambda x: x
-
-    n = len(lista)
-    if n <= 1:
-        return list(lista)
-
-    res = list(lista)
-
-    def mesclar(arr: list, esq: int, meio: int, dir: int) -> None:
-        L = arr[esq:meio]
-        R = arr[meio:dir]
-
-        i = j = 0
-        k = esq
-
-        while i < len(L) and j < len(R):
-            comp = (chave(L[i]) > chave(R[j])) if reverso else (chave(L[i]) <= chave(R[j]))
-            if comp:
-                arr[k] = L[i]
-                i += 1
-            else:
-                arr[k] = R[j]
-                j += 1
-            k += 1
-
-        while i < len(L):
-            arr[k] = L[i]
-            i += 1
-            k += 1
-
-        while j < len(R):
-            arr[k] = R[j]
-            j += 1
-            k += 1
-
-    tamanho = 1
-    while tamanho < n:
-        for esq in range(0, n, 2 * tamanho):
-            meio = min(esq + tamanho, n)
-            dir = min(esq + 2 * tamanho, n)
-            if meio < dir:
-                mesclar(res, esq, meio, dir)
-        tamanho *= 2
-
-    return res
-
-
 def heapsort(lista: list, chave=None, reverso: bool = False) -> list:
     if chave is None:
         chave = lambda x: x
@@ -189,15 +139,10 @@ def registrarAvaliacao(livros: dict, livro_id: str, nota: float) -> dict | None:
    return livro
 
 
-
-
 def _garantir_campos_metricas(livro: dict) -> None:
    livro.setdefault("nota_media", 0.0)
    livro.setdefault("total_avaliacoes", 0)
    livro.setdefault("contagem_emprestimos", 0)
-
-
-
 
 def incrementar_emprestimo(livros: dict, livro_id: str) -> dict | None:
 
@@ -211,11 +156,6 @@ def incrementar_emprestimo(livros: dict, livro_id: str) -> dict | None:
    livro["contagem_emprestimos"] += 1
    return livro
 
-
-
-
-
-
 def ordenar_por_titulo(livros: dict | list, reverso: bool = False) -> list:
    lista = list(livros.values()) if isinstance(livros, dict) else list(livros)
    return quicksort(
@@ -223,8 +163,6 @@ def ordenar_por_titulo(livros: dict | list, reverso: bool = False) -> list:
        chave=lambda l: l.get("titulo", "").lower(),
        reverso=reverso
    )
-
-
 
 
 def ranking_por_avaliacao(livros: dict | list) -> list:
@@ -240,8 +178,6 @@ def ranking_por_avaliacao(livros: dict | list) -> list:
        chave=lambda l: l["nota_media"],
        reverso=True   # maior nota primeiro
    )
-
-
 
 
 def ranking_por_popularidade(livros: dict | list, reverso: bool = True) -> list:
@@ -263,9 +199,6 @@ def ranking_por_popularidade(livros: dict | list, reverso: bool = True) -> list:
        chave=calcular_score,
        reverso=reverso
    )
-
-
-
 
 def radix_sort_por_ano(lista: list, reverso: bool = False) -> list:
 
@@ -293,7 +226,6 @@ def radix_sort_por_ano(lista: list, reverso: bool = False) -> list:
         if len(arr) <= 1 or exp == 0:
             return arr
 
-        # 10 baldes para os dígitos 0-9
         baldes = [[] for _ in range(10)]
 
         for livro in arr:
@@ -302,7 +234,6 @@ def radix_sort_por_ano(lista: list, reverso: bool = False) -> list:
 
         resultado = []
         for balde in baldes:
-            # ordena cada balde pelo próximo dígito (recursão)
             sub = msd_recursivo(balde, exp // 10)
             for item in sub:
                 resultado.append(item)
@@ -314,7 +245,6 @@ def radix_sort_por_ano(lista: list, reverso: bool = False) -> list:
 
     copia = list(lista)
 
-    # descobre o expoente do dígito mais significativo
     exp_inicial = maior_exp(copia)
 
     ordenado = msd_recursivo(copia, exp_inicial)
