@@ -10,5 +10,167 @@
     "livro": "Hoje É Um Novo Dia",
     "aluno": "Olívia Ramos",
     "data_devolucao": "02/04/2026 08:15"
+  },
+  "DEV-123456": {
+    "chave_emprestimo": "123456",
+    "livro": "Dom Casmurro",
+    "aluno": "Ana Silva",
+    "data_devolucao": "07/05/2026 22:51"
+  },
+  "DEV-614954": {
+    "chave_emprestimo": "614954",
+    "livro": "Hoje É Um Novo Dia",
+    "aluno": "Caio Moreira",
+    "data_devolucao": "07/05/2026 23:00"
+  },
+  "DEV-855387": {
+    "chave_emprestimo": "855387",
+    "livro": "O Cortico",
+    "aluno": "Rita Cardoso",
+    "data_devolucao": "07/05/2026 23:02"
+  },
+  "DEV-456789": {
+    "chave_emprestimo": "456789",
+    "livro": "Capitaes da Areia",
+    "aluno": "Olívia Ramos",
+    "data_devolucao": "07/05/2026 23:13"
+  },
+  "DEV-567890": {
+    "chave_emprestimo": "567890",
+    "livro": "Vidas Secas",
+    "aluno": "Tiago Bragança",
+    "data_devolucao": "07/05/2026 23:22"
+  },
+  "DEV-760353": {
+    "chave_emprestimo": "760353",
+    "livro": "O Cortico",
+    "aluno": "Olívia Ramos",
+    "data_devolucao": "07/05/2026 23:23"
+  },
+  "DEV-661144": {
+    "chave_emprestimo": "661144",
+    "livro": "O Cortico",
+    "aluno": "Úrsula Duarte",
+    "data_devolucao": "07/05/2026 23:23"
+  },
+  "DEV-173613": {
+    "chave_emprestimo": "173613",
+    "livro": "Memorias Postumas De Bras Cubas",
+    "aluno": "Olívia Ramos",
+    "data_devolucao": "07/05/2026 23:28"
+  },
+  "DEV-671976": {
+    "chave_emprestimo": "671976",
+    "livro": "Memorias Postumas De Bras Cubas",
+    "aluno": "Olívia Ramos",
+    "data_devolucao": "07/05/2026 23:29"
+  },
+  "DEV-858842": {
+    "chave_emprestimo": "858842",
+    "livro": "Esau E Jaco",
+    "aluno": "Vítor Machado",
+    "data_devolucao": "07/05/2026 23:38"
+  },
+  "DEV-660670": {
+    "chave_emprestimo": "660670",
+    "livro": "O Cortico",
+    "aluno": "Lucas Antunes",
+    "data_devolucao": "07/05/2026 23:40"
+  },
+  "DEV-428960": {
+    "chave_emprestimo": "428960",
+    "livro": "O Cortico",
+    "aluno": "Vítor Machado",
+    "data_devolucao": "07/05/2026 23:40"
+  },
+  "DEV-94292": {
+    "chave_emprestimo": "94292",
+    "livro": "Iracema",
+    "aluno": "Bruno Santos",
+    "data_devolucao": "07/05/2026 23:41"
+  },
+  "DEV-410302": {
+    "chave_emprestimo": "410302",
+    "livro": "Iracema",
+    "aluno": "Bruno Santos",
+    "data_devolucao": "07/05/2026 23:41"
+  },
+  "DEV-127104": {
+    "chave_emprestimo": "127104",
+    "livro": "Iracema",
+    "aluno": "Bruno Santos",
+    "data_devolucao": "07/05/2026 23:41"
+  },
+  "DEV-910877": {
+    "chave_emprestimo": "910877",
+    "livro": "Casa De Pensao",
+    "aluno": "Vítor Machado",
+    "data_devolucao": "07/05/2026 23:53"
+  },
+  "DEV-960389": {
+    "chave_emprestimo": "960389",
+    "livro": "O Cortico",
+    "aluno": "Diogo Oliveira",
+    "data_devolucao": "08/05/2026 00:10"
+  },
+  "DEV-53420": {
+    "chave_emprestimo": "53420",
+    "livro": "Brida",
+    "aluno": "Bruno Santos",
+    "data_devolucao": "08/05/2026 00:11"
+  },
+  "DEV-970204": {
+    "chave_emprestimo": "970204",
+    "livro": "Brida",
+    "aluno": "Diogo Oliveira",
+    "data_devolucao": "08/05/2026 00:11"
+  },
+  "DEV-919607": {
+    "chave_emprestimo": "919607",
+    "livro": "Brida",
+    "aluno": "Fábio Pereira",
+    "data_devolucao": "08/05/2026 00:11"
+  },
+  "DEV-836958": {
+    "chave_emprestimo": "836958",
+    "livro": "Brida",
+    "aluno": "Hugo Rocha",
+    "data_devolucao": "08/05/2026 00:11"
+  },
+  "DEV-69824": {
+    "chave_emprestimo": "69824",
+    "livro": "Brida",
+    "aluno": "Elena Costa",
+    "data_devolucao": "08/05/2026 00:12"
+  },
+  "DEV-70086": {
+    "chave_emprestimo": "70086",
+    "livro": "Brida",
+    "aluno": "Hugo Rocha",
+    "data_devolucao": "08/05/2026 00:12"
+  },
+  "DEV-786100": {
+    "chave_emprestimo": "786100",
+    "livro": "Brida",
+    "aluno": "Hugo Rocha",
+    "data_devolucao": "08/05/2026 00:12"
+  },
+  "DEV-552601": {
+    "chave_emprestimo": "552601",
+    "livro": "Grande Sertao Veredas",
+    "aluno": "Bruno Santos",
+    "data_devolucao": "08/05/2026 00:15"
+  },
+  "DEV-2365": {
+    "chave_emprestimo": "2365",
+    "livro": "Grande Sertao Veredas",
+    "aluno": "Carla Ferreira",
+    "data_devolucao": "08/05/2026 00:15"
+  },
+  "DEV-710308": {
+    "chave_emprestimo": "710308",
+    "livro": "O Cortico",
+    "aluno": "Carla Ferreira",
+    "data_devolucao": "11/05/2026 20:29"
   }
 }
