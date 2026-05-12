@@ -1,14 +1,14 @@
-[🇧🇷 Português](README.md) | 🇺🇸 **English**
-<H1> Sorting Algorithms Project - Library System (SB) 📚 </H1>
+🇺🇸 **English** | [🇧🇷 Português](README.md)
+<H1> Search Algorithm Project - Library System (LS) 📚 </H1>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Status-Completed-green?style=flat-square" alt="Status">
-  <img src="https://img.shields.io/badge/Python-3.10+-blue?style=flat-square&logo=python&logoColor=white" alt="Python">
-  <img src="https://img.shields.io/badge/Sorting-Quick%20%7C%20Heap%20%7C%20Radix-purple?style=flat-square" alt="Sorting">
+<img src="https://img.shields.io/badge/Status-Completed-green?style=flat-square" alt="Status">
+<img src="https://img.shields.io/badge/Python-3.10+-blue?style=flat-square&logo=python&logoColor=white" alt="Python">
+<img src="https://img.shields.io/badge/Search-BST%20%2F%20Fuzzy-orange?style=flat-square" alt="Search">
 </p>
 
 <p align="center">
-  <img src="https://i.postimg.cc/YCsvxJLN/Captura-de-Tela-2026-04-04-a-s-02-39-39.png" width="500">
+<img src="https://i.postimg.cc/YCsvxJLN/Captura-de-Tela-2026-04-04-a-s-02-39-39.png" width="500">
 </p>
 
 ---
@@ -18,23 +18,19 @@
 
 ## 📝 Description
 
-The **Library System (SB)** is a Python application designed to be fast and user-friendly. Featuring a modern dark mode interface, it was built to ensure fluid navigation and catalog organization, without freezing or unnecessary wait times.
+**The Library System (LS)** is a Python application designed to be fast and user-friendly. Featuring a modern dark mode interface, it was engineered to ensure a fluid experience without lags or unnecessary wait times.
+In this new version, the system evolves from a simple search tool into a comprehensive solution. It is built upon three core concepts: **Binary Search Trees (BST)**, which organize book codes for agile record retrieval; **Inverted Indexes**, which help locate keywords without scanning the entire database; and **Fuzzy Search**, which understands user intent even with typos or incomplete names.
+Ultimately, the system handles large volumes of books without losing performance, maintaining a balance between technical efficiency and a simple, pleasant daily user experience.
 
-In this new version, the main focus of the system is the **dynamic structuring and sorting of data**. To handle different types of information (text, integers, decimals, and dates), the system applies specific approaches to each table column. This includes using **Quick Sort** for alphabetical categorization, **Heap Sort** for precise rating rankings, and **Radix Sort (MSD)** for chronological sorting.
+## 💡 Technical Highlights
 
-Ultimately, the system can instantly list, reorganize, and reverse large amounts of books, maintaining a perfect balance between algorithmic efficiency and a simple, pleasant everyday user experience.
+The main feature of this update is the Advanced Search Module, which employs different strategies based on user input:
 
-## 💡 Technical Differentials - Sorting Algorithms
-
-The major highlight of this update is the Sorting Module, which utilizes different algorithmic strategies depending on the column selected by the user in the interface:
-
-- **Quick Sort:** Implemented as the primary (all-rounder) algorithm for sorting *strings* (Title, Author, Genre) and simple integers (ID Numbering and Loan Count). It ensures speed in alphabetical and popularity organization.
-- **Heap Sort:** Structured specifically to organize books based on floating-point numbers (*floats*). It is triggered when the user wants to view the highest or lowest Average Rating scores in the catalog.
-- **Radix Sort (MSD):** Implemented with the *Most Significant Digit* recursive approach using *buckets* separation. It is the ideal algorithm for sorting fixed-size integers, applied exclusively to sort Publication Years.
-- **Merge Sort:** A divide-and-conquer algorithm implemented in the system's core library, ensuring flexibility and stability as a baseline alternative for data processing.
-
-
-## 🌐 Sorting Demonstration
+- **Binary Search Tree (BST):** Implemented from scratch for exact numerical searches and range queries;
+- **Inverted Index:** A technique used by major search engines like Google to find keywords in titles and authors instantaneously, without traversing the entire list;
+- **Fuzzy Search (Levenshtein):** A string similarity algorithm that finds results even if the user misspells the book title.
+  
+## 🌐 Search Modules Screenshots
 
 <p align="center">
   <img src="https://i.postimg.cc/SQrYLNBB/image.png" width="600">
@@ -46,25 +42,26 @@ The major highlight of this update is the Sorting Module, which utilizes differe
 
 ## 🎯 Features
 
-- **Dynamic Table Sorting:** Click on any table header to instantly organize the catalog, with support for reverse sorting (Ascending/Descending or A-Z/Z-A).
-- **Catalog Management:** Detailed book registration, including title, author, genre, and stock.
-- **Student Registration:** Centralized user control, securely storing enrollment and contact data.
-- **Dynamic Editing:** Allows updating information for already registered books and students, keeping the database always up to date.
-- **Loan and Popularity Control:** Agile checkout logging, associating the student with the book and automatically counting the number of times the work has been borrowed.
-- **Returns and Ratings Management:** Automatic loan discharge with an integrated feature for the student to register a 0 to 5-star rating for the returned work.
+- **Collection Management:** Detailed book registration including title, author, genre, and stock with automatic indexing for instant searches;
+- **Student Records:** Centralized user control, storing IDs and contact data securely;
+- **Dynamic Editing:** Allows updating information for books and students already in the system, keeping the database current;
+- **Loan Management:** Agile checkout process, linking students to books and documenting withdrawal dates;
+- **Returns Management:** Automatic processing of returns with immediate updates to collection availability;
+- **Queries and Reports:** Organized visualization of all registered data, facilitating audits of students, books, and transactions.
 
 ---
 
 ## 💻 Prerequisites
 
-Before running the program, make sure you have the following requirements installed:
+Before running the program, ensure you have the following requirements installed:
 
-**1. Python 3.10 or higher.**
+**1. Python 3.10 or higher..**
 
 **2. Dependencies:**
 
-- PySide6; and 
-- qdarktheme.
+- PySide6;
+- qdarktheme;
+- rapidfuzz.
 
 **3.Operating System: Windows, macOS, or Linux**
 
@@ -97,7 +94,7 @@ If you don't have Python 3.10, you can download it [here](https://www.python.org
 First, clone the project repository to your machine. Open the terminal and run:
 
 ```bash
-git clone https://github.com/eda2-2026/G41_Ordenacao_EDA2-2026.1.git
+git clone https://github.com/eda2-2026/G41_Busca_EDA2-2026.1.git
 ```
 
 **3. Install Dependencies:**
@@ -118,6 +115,12 @@ pip install pyside6
 
 ```bash
 pip install qdarktheme
+```
+
+- **Install rapidfuzz**
+
+```bash
+pip install rapidfuzz
 ```
 
 **4. Run the Program**

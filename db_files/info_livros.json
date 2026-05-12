@@ -41,7 +41,12 @@
     "genero": "Romance",
     "autor": "Machado de Assis",
     "editora": "Penguin",
-    "quantidade": 1
+    "quantidade": 1,
+    "nota_media": 4.0,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 2,
+    "ano": 1904
+
   },
   "0005": {
     "numeracao": "0005",
@@ -49,7 +54,12 @@
     "genero": "Naturalismo",
     "autor": "Aluisio Azevedo",
     "editora": "Atica",
-    "quantidade": 4
+    "quantidade": 4,
+     "nota_media": 4.47,
+    "total_avaliacoes": 3,
+    "contagem_emprestimos": 10,
+    "ano": 1890
+
   },
   "0006": {
     "numeracao": "0006",
@@ -69,7 +79,11 @@
     "genero": "Romantismo",
     "autor": "Jose de Alencar",
     "editora": "Atica",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 3.7,
+   "total_avaliacoes": 3,
+   "contagem_emprestimos": 4,
+   "ano": 1865
   },
   "0008": {
     "numeracao": "0008",
@@ -77,7 +91,11 @@
     "genero": "Romantismo",
     "autor": "Jose de Alencar",
     "editora": "Atica",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 0.9,
+   "total_avaliacoes": 1,
+   "contagem_emprestimos": 0,
+   "ano": 1875
   },
   "0009": {
     "numeracao": "0009",
@@ -85,7 +103,12 @@
     "genero": "Romantismo",
     "autor": "Jose de Alencar",
     "editora": "Atica",
-    "quantidade": 3
+    "quantidade": 3,
+     "nota_media": 4.7,
+   "total_avaliacoes": 1,
+   "contagem_emprestimos": 0,
+   "ano": 1857
+
   },
   "0010": {
     "numeracao": "0010",
@@ -93,7 +116,11 @@
     "genero": "Romantismo",
     "autor": "Joaquim Manuel de Macedo",
     "editora": "Moderna",
-    "quantidade": 2
+    "quantidade": 2,
+   "nota_media": 0.1,
+   "total_avaliacoes": 1,
+   "contagem_emprestimos": 0,
+   "ano": 1844
   },
   "0011": {
     "numeracao": "0011",
@@ -101,7 +128,12 @@
     "genero": "Romance",
     "autor": "Jorge Amado",
     "editora": "Companhia das Letras",
-    "quantidade": 5
+    "quantidade": 5,
+   "nota_media": 1.1,
+   "total_avaliacoes": 1,
+   "contagem_emprestimos": 0,
+   "ano": 1937
+
   },
   "0012": {
     "numeracao": "0012",
@@ -109,7 +141,12 @@
     "genero": "Romance",
     "autor": "Jorge Amado",
     "editora": "Companhia das Letras",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 3.3,
+   "total_avaliacoes": 1,
+   "contagem_emprestimos": 0,
+   "ano": 1958
+
   },
   "0013": {
     "numeracao": "0013",
@@ -117,7 +154,11 @@
     "genero": "Romance",
     "autor": "Jorge Amado",
     "editora": "Companhia das Letras",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 4.3,
+   "total_avaliacoes": 1,
+   "contagem_emprestimos": 0,
+   "ano": 1943
   },
   "0014": {
     "numeracao": "0014",
@@ -125,7 +166,11 @@
     "genero": "Romance",
     "autor": "Jorge Amado",
     "editora": "Companhia das Letras",
-    "quantidade": 2
+    "quantidade": 2,
+     "nota_media": 1.7,
+   "total_avaliacoes": 1,
+   "contagem_emprestimos": 0,
+   "ano": 1977
   },
   "0015": {
     "numeracao": "0015",
@@ -133,7 +178,12 @@
     "genero": "Regionalismo",
     "autor": "Graciliano Ramos",
     "editora": "Record",
-    "quantidade": 4
+    "quantidade": 4,
+   "nota_media": 0.8,
+   "total_avaliacoes": 1,
+   "contagem_emprestimos": 0,
+   "ano": 1938
+
   },
   "0016": {
     "numeracao": "0016",
@@ -141,7 +191,12 @@
     "genero": "Regionalismo",
     "autor": "Graciliano Ramos",
     "editora": "Record",
-    "quantidade": 2
+    "quantidade": 2,
+   "nota_media": 4.9,
+   "total_avaliacoes": 1,
+   "contagem_emprestimos": 1,
+   "ano": 1934
+
   },
   "0017": {
     "numeracao": "0017",
@@ -149,7 +204,12 @@
     "genero": "Regionalismo",
     "autor": "Graciliano Ramos",
     "editora": "Record",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 0.7,
+   "total_avaliacoes": 1,
+   "contagem_emprestimos": 0,
+   "ano": 1936
+
   },
   "0018": {
     "numeracao": "0018",
@@ -157,7 +217,11 @@
     "genero": "Regionalismo",
     "autor": "Guimaraes Rosa",
     "editora": "Nova Fronteira",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 2.33,
+   "total_avaliacoes": 3,
+   "contagem_emprestimos": 2,
+   "ano": 1956
   },
   "0019": {
     "numeracao": "0019",
@@ -165,7 +229,11 @@
     "genero": "Conto",
     "autor": "Guimaraes Rosa",
     "editora": "Nova Fronteira",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 4.2,
+   "total_avaliacoes": 1,
+   "contagem_emprestimos": 0,
+   "ano": 1946
   },
   "0020": {
     "numeracao": "0020",
@@ -173,7 +241,11 @@
     "genero": "Conto",
     "autor": "Guimaraes Rosa",
     "editora": "Nova Fronteira",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 3.2,
+   "total_avaliacoes": 1,
+   "contagem_emprestimos": 0,
+   "ano": 1962
   },
   "0021": {
     "numeracao": "0021",
@@ -181,7 +253,11 @@
     "genero": "Romance",
     "autor": "Clarice Lispector",
     "editora": "Rocco",
-    "quantidade": 4
+    "quantidade": 4,
+    "nota_media": 4.0,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1977
   },
   "0022": {
     "numeracao": "0022",
@@ -213,7 +289,11 @@
     "genero": "Conto",
     "autor": "Clarice Lispector",
     "editora": "Rocco",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 0.7,
+   "total_avaliacoes": 1,
+   "contagem_emprestimos": 0,
+   "ano": 1960
   },
   "0025": {
     "numeracao": "0025",
@@ -221,7 +301,12 @@
     "genero": "Fantasia",
     "autor": "J.R.R. Tolkien",
     "editora": "Martins Fontes",
-    "quantidade": 4
+    "quantidade": 4,
+    "nota_media": 2.2,
+   "total_avaliacoes": 1,
+   "contagem_emprestimos": 0,
+   "ano": 1954
+
   },
   "0026": {
     "numeracao": "0026",
@@ -229,7 +314,11 @@
     "genero": "Fantasia",
     "autor": "J.R.R. Tolkien",
     "editora": "Martins Fontes",
-    "quantidade": 4
+    "quantidade": 4,
+    "nota_media": 3.8,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1954
   },
   "0027": {
     "numeracao": "0027",
@@ -237,7 +326,11 @@
     "genero": "Fantasia",
     "autor": "J.R.R. Tolkien",
     "editora": "Martins Fontes",
-    "quantidade": 4
+    "quantidade": 4,
+    "nota_media": 4.5,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1955
   },
   "0028": {
     "numeracao": "0028",
@@ -245,7 +338,11 @@
     "genero": "Fantasia",
     "autor": "J.R.R. Tolkien",
     "editora": "Martins Fontes",
-    "quantidade": 5
+    "quantidade": 5,
+    "nota_media": 4.8,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1937
   },
   "0029": {
     "numeracao": "0029",
@@ -253,7 +350,11 @@
     "genero": "Fantasia",
     "autor": "J.R.R. Tolkien",
     "editora": "Martins Fontes",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 4.0,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1977
   },
   "0030": {
     "numeracao": "0030",
@@ -261,7 +362,11 @@
     "genero": "Fantasia",
     "autor": "J.K. Rowling",
     "editora": "Rocco",
-    "quantidade": 6
+    "quantidade": 6,
+    "nota_media": 4.5,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1997
   },
   "0031": {
     "numeracao": "0031",
@@ -269,7 +374,11 @@
     "genero": "Fantasia",
     "autor": "J.K. Rowling",
     "editora": "Rocco",
-    "quantidade": 5
+    "quantidade": 5,
+    "nota_media": 4.2,
+    "total_avaliacoes": 2,
+    "contagem_emprestimos": 0,
+    "ano": 1998
   },
   "0032": {
     "numeracao": "0032",
@@ -277,7 +386,11 @@
     "genero": "Fantasia",
     "autor": "J.K. Rowling",
     "editora": "Rocco",
-    "quantidade": 5
+    "quantidade": 5,
+    "nota_media": 3.5,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1999
   },
   "0033": {
     "numeracao": "0033",
@@ -297,7 +410,11 @@
     "genero": "Fantasia",
     "autor": "J.K. Rowling",
     "editora": "Rocco",
-    "quantidade": 4
+    "quantidade": 4,
+    "nota_media": 3.8,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 2003
   },
   "0035": {
     "numeracao": "0035",
@@ -305,7 +422,11 @@
     "genero": "Fantasia",
     "autor": "J.K. Rowling",
     "editora": "Rocco",
-    "quantidade": 4
+    "quantidade": 4,
+    "nota_media": 4.0,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 2005
   },
   "0036": {
     "numeracao": "0036",
@@ -325,7 +446,11 @@
     "genero": "Distopia",
     "autor": "George Orwell",
     "editora": "Companhia das Letras",
-    "quantidade": 4
+    "quantidade": 4,
+    "nota_media": 3.5,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1949
   },
   "0038": {
     "numeracao": "0038",
@@ -333,7 +458,11 @@
     "genero": "Distopia",
     "autor": "George Orwell",
     "editora": "Companhia das Letras",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 2.2,  
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1945
   },
   "0039": {
     "numeracao": "0039",
@@ -341,7 +470,11 @@
     "genero": "Distopia",
     "autor": "Aldous Huxley",
     "editora": "Globo",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 3.8,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1932
   },
   "0040": {
     "numeracao": "0040",
@@ -349,7 +482,11 @@
     "genero": "Distopia",
     "autor": "Ray Bradbury",
     "editora": "Globo",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 3.0,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1953
   },
   "0041": {
     "numeracao": "0041",
@@ -357,7 +494,11 @@
     "genero": "Distopia",
     "autor": "Margaret Atwood",
     "editora": "Rocco",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 4.7,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1985
   },
   "0042": {
     "numeracao": "0042",
@@ -365,7 +506,11 @@
     "genero": "Distopia",
     "autor": "Margaret Atwood",
     "editora": "Rocco",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 4.5,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 2019
   },
   "0043": {
     "numeracao": "0043",
@@ -373,7 +518,11 @@
     "genero": "Fabula",
     "autor": "Antoine de Saint-Exupery",
     "editora": "Agir",
-    "quantidade": 7
+    "quantidade": 7,
+    "nota_media": 4.5,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1943
   },
   "0044": {
     "numeracao": "0044",
@@ -381,7 +530,11 @@
     "genero": "Realismo Magico",
     "autor": "Gabriel Garcia Marquez",
     "editora": "Record",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 3.2,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1967
   },
   "0045": {
     "numeracao": "0045",
@@ -389,7 +542,11 @@
     "genero": "Realismo Magico",
     "autor": "Gabriel Garcia Marquez",
     "editora": "Record",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 2.0,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1985
   },
   "0046": {
     "numeracao": "0046",
@@ -397,7 +554,11 @@
     "genero": "Realismo Magico",
     "autor": "Gabriel Garcia Marquez",
     "editora": "Record",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 1.5,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1981
   },
   "0047": {
     "numeracao": "0047",
@@ -405,7 +566,11 @@
     "genero": "Romance",
     "autor": "Fiodor Dostoievski",
     "editora": "Editora 34",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 3.7,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1866
   },
   "0048": {
     "numeracao": "0048",
@@ -413,7 +578,11 @@
     "genero": "Romance",
     "autor": "Fiodor Dostoievski",
     "editora": "Editora 34",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 3.0,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1869
   },
   "0049": {
     "numeracao": "0049",
@@ -421,7 +590,11 @@
     "genero": "Romance",
     "autor": "Fiodor Dostoievski",
     "editora": "Editora 34",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 2.5,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1880
   },
   "0050": {
     "numeracao": "0050",
@@ -429,7 +602,11 @@
     "genero": "Romance",
     "autor": "Liev Tolstoi",
     "editora": "Cosac Naify",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 4.0,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1877
   },
   "0051": {
     "numeracao": "0051",
@@ -437,7 +614,11 @@
     "genero": "Romance Historico",
     "autor": "Liev Tolstoi",
     "editora": "Cosac Naify",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 4.2,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1869
   },
   "0052": {
     "numeracao": "0052",
@@ -445,7 +626,11 @@
     "genero": "Romance",
     "autor": "Liev Tolstoi",
     "editora": "Cosac Naify",
-    "quantidade": 1
+    "quantidade": 1,
+    "nota_media": 3.5,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1899
   },
   "0053": {
     "numeracao": "0053",
@@ -453,7 +638,11 @@
     "genero": "Ficcao",
     "autor": "Paulo Coelho",
     "editora": "HarperCollins",
-    "quantidade": 5
+    "quantidade": 5,
+    "nota_media": 3.3,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1988
   },
   "0054": {
     "numeracao": "0054",
@@ -473,7 +662,11 @@
     "genero": "Ficcao",
     "autor": "Paulo Coelho",
     "editora": "HarperCollins",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 3.5,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1987
   },
   "0056": {
     "numeracao": "0056",
@@ -481,7 +674,11 @@
     "genero": "Ficcao",
     "autor": "Paulo Coelho",
     "editora": "HarperCollins",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 3.0,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1998
   },
   "0057": {
     "numeracao": "0057",
@@ -489,7 +686,11 @@
     "genero": "Jovem Adulto",
     "autor": "John Green",
     "editora": "Intrinseca",
-    "quantidade": 4
+    "quantidade": 4,
+    "nota_media": 3.5,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 2012
   },
   "0058": {
     "numeracao": "0058",
@@ -497,7 +698,11 @@
     "genero": "Jovem Adulto",
     "autor": "John Green",
     "editora": "Intrinseca",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 3.5,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 2008
   },
   "0059": {
     "numeracao": "0059",
@@ -505,7 +710,11 @@
     "genero": "Jovem Adulto",
     "autor": "John Green",
     "editora": "Intrinseca",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 3.0,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 2006
   },
   "0060": {
     "numeracao": "0060",
@@ -513,7 +722,11 @@
     "genero": "Suspense",
     "autor": "Dan Brown",
     "editora": "Sextante",
-    "quantidade": 4
+    "quantidade": 4,
+    "nota_media": 2.5,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 2003
   },
   "0061": {
     "numeracao": "0061",
@@ -521,7 +734,11 @@
     "genero": "Suspense",
     "autor": "Dan Brown",
     "editora": "Sextante",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 3.0,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 2013
   },
   "0062": {
     "numeracao": "0062",
@@ -529,7 +746,11 @@
     "genero": "Suspense",
     "autor": "Dan Brown",
     "editora": "Sextante",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 3.8,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 2000
   },
   "0063": {
     "numeracao": "0063",
@@ -537,7 +758,11 @@
     "genero": "Suspense",
     "autor": "Dan Brown",
     "editora": "Sextante",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 3.2,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 2017
   },
   "0064": {
     "numeracao": "0064",
@@ -545,7 +770,11 @@
     "genero": "Ficcao Cientifica",
     "autor": "Frank Herbert",
     "editora": "Aleph",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 4.0,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1965
   },
   "0065": {
     "numeracao": "0065",
@@ -553,7 +782,11 @@
     "genero": "Ficcao Cientifica",
     "autor": "Frank Herbert",
     "editora": "Aleph",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 4.0,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1969
   },
   "0066": {
     "numeracao": "0066",
@@ -561,7 +794,11 @@
     "genero": "Ficcao Cientifica",
     "autor": "Isaac Asimov",
     "editora": "Aleph",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 2.3,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1951
   },
   "0067": {
     "numeracao": "0067",
@@ -569,7 +806,11 @@
     "genero": "Ficcao Cientifica",
     "autor": "Isaac Asimov",
     "editora": "Aleph",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 3.0,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1952
   },
   "0068": {
     "numeracao": "0068",
@@ -577,7 +818,11 @@
     "genero": "Ficcao Cientifica",
     "autor": "Isaac Asimov",
     "editora": "Aleph",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 3.5,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1953
   },
   "0069": {
     "numeracao": "0069",
@@ -585,7 +830,11 @@
     "genero": "Ficcao Cientifica",
     "autor": "Isaac Asimov",
     "editora": "Aleph",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 3.8,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1950
   },
   "0070": {
     "numeracao": "0070",
@@ -593,7 +842,11 @@
     "genero": "Ficcao Cientifica",
     "autor": "Isaac Asimov",
     "editora": "Aleph",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 4.2,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1955
   },
   "0071": {
     "numeracao": "0071",
@@ -601,7 +854,11 @@
     "genero": "Ficcao Cientifica",
     "autor": "William Gibson",
     "editora": "Aleph",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 3.5,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1984
   },
   "0072": {
     "numeracao": "0072",
@@ -609,7 +866,11 @@
     "genero": "Ficcao Cientifica",
     "autor": "Douglas Adams",
     "editora": "Arqueiro",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 4.0,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1979
   },
   "0073": {
     "numeracao": "0073",
@@ -617,7 +878,11 @@
     "genero": "Ficcao Cientifica",
     "autor": "Douglas Adams",
     "editora": "Arqueiro",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 3.3,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1980
   },
   "0074": {
     "numeracao": "0074",
@@ -625,7 +890,11 @@
     "genero": "Ficcao Cientifica",
     "autor": "H.G. Wells",
     "editora": "Penguin",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 4.0,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1998
   },
   "0075": {
     "numeracao": "0075",
@@ -633,7 +902,11 @@
     "genero": "Ficcao Cientifica",
     "autor": "H.G. Wells",
     "editora": "Penguin",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 2.8,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1895
   },
   "0076": {
     "numeracao": "0076",
@@ -641,7 +914,11 @@
     "genero": "Terror",
     "autor": "Mary Shelley",
     "editora": "Penguin",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 4.4,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1818
   },
   "0077": {
     "numeracao": "0077",
@@ -649,7 +926,11 @@
     "genero": "Terror",
     "autor": "Bram Stoker",
     "editora": "Penguin",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 3.9,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1897
   },
   "0078": {
     "numeracao": "0078",
@@ -657,7 +938,11 @@
     "genero": "Terror",
     "autor": "H.P. Lovecraft",
     "editora": "Hedra",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 2.5,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1928
   },
   "0079": {
     "numeracao": "0079",
@@ -665,7 +950,11 @@
     "genero": "Terror",
     "autor": "H.P. Lovecraft",
     "editora": "Hedra",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 2.5,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1927
   },
   "0080": {
     "numeracao": "0080",
@@ -673,7 +962,11 @@
     "genero": "Terror",
     "autor": "Stephen King",
     "editora": "Suma",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 4.1,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1986
   },
   "0081": {
     "numeracao": "0081",
@@ -681,7 +974,11 @@
     "genero": "Terror",
     "autor": "Stephen King",
     "editora": "Suma",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 4.2,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1977
   },
   "0082": {
     "numeracao": "0082",
@@ -689,7 +986,11 @@
     "genero": "Terror",
     "autor": "Stephen King",
     "editora": "Suma",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 3.8,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1974
   },
   "0083": {
     "numeracao": "0083",
@@ -697,7 +998,11 @@
     "genero": "Terror",
     "autor": "Stephen King",
     "editora": "Suma",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 3.7,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1987
   },
   "0084": {
     "numeracao": "0084",
@@ -705,7 +1010,11 @@
     "genero": "Fantasia",
     "autor": "Stephen King",
     "editora": "Suma",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 3.9,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1982
   },
   "0085": {
     "numeracao": "0085",
@@ -713,7 +1022,11 @@
     "genero": "Fantasia",
     "autor": "Patrick Rothfuss",
     "editora": "Arqueiro",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 1.5,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 2007
   },
   "0086": {
     "numeracao": "0086",
@@ -721,7 +1034,11 @@
     "genero": "Fantasia",
     "autor": "Patrick Rothfuss",
     "editora": "Arqueiro",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 1.5,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 2011
   },
   "0087": {
     "numeracao": "0087",
@@ -729,7 +1046,11 @@
     "genero": "Fantasia",
     "autor": "Patrick Rothfuss",
     "editora": "Arqueiro",
-    "quantidade": 1
+    "quantidade": 1,
+    "nota_media": 1.9,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 2014
   },
   "0088": {
     "numeracao": "0088",
@@ -737,7 +1058,11 @@
     "genero": "Fantasia",
     "autor": "Brandon Sanderson",
     "editora": "Arqueiro",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 4.2,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 2010
   },
   "0089": {
     "numeracao": "0089",
@@ -745,7 +1070,11 @@
     "genero": "Fantasia",
     "autor": "Brandon Sanderson",
     "editora": "Arqueiro",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 3.0,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 2014
   },
   "0090": {
     "numeracao": "0090",
@@ -753,7 +1082,11 @@
     "genero": "Fantasia",
     "autor": "Brandon Sanderson",
     "editora": "Arqueiro",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 3.5,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 2017
   },
   "0091": {
     "numeracao": "0091",
@@ -773,7 +1106,11 @@
     "genero": "Fantasia",
     "autor": "Brandon Sanderson",
     "editora": "Arqueiro",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 2.8,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 2007
   },
   "0093": {
     "numeracao": "0093",
@@ -781,7 +1118,11 @@
     "genero": "Fantasia",
     "autor": "Brandon Sanderson",
     "editora": "Arqueiro",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 2.5,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 2008
   },
   "0094": {
     "numeracao": "0094",
@@ -789,7 +1130,11 @@
     "genero": "Fantasia",
     "autor": "Christopher Paolini",
     "editora": "Rocco",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 3.0,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 2002
   },
   "0095": {
     "numeracao": "0095",
@@ -797,7 +1142,11 @@
     "genero": "Fantasia",
     "autor": "Christopher Paolini",
     "editora": "Rocco",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 2.6,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 2005
   },
   "0096": {
     "numeracao": "0096",
@@ -805,7 +1154,11 @@
     "genero": "Fantasia",
     "autor": "Christopher Paolini",
     "editora": "Rocco",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 2.8,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 2008
   },
   "0097": {
     "numeracao": "0097",
@@ -813,7 +1166,11 @@
     "genero": "Fantasia",
     "autor": "C.S. Lewis",
     "editora": "Martins Fontes",
-    "quantidade": 4
+    "quantidade": 4,
+    "nota_media": 3.5,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1950
   },
   "0098": {
     "numeracao": "0098",
@@ -821,7 +1178,11 @@
     "genero": "Fantasia",
     "autor": "C.S. Lewis",
     "editora": "Martins Fontes",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 3.0,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1951
   },
   "0099": {
     "numeracao": "0099",
@@ -829,15 +1190,23 @@
     "genero": "Fantasia",
     "autor": "C.S. Lewis",
     "editora": "Martins Fontes",
-    "quantidade": 2
-  }, 
-    "0100": {
+    "quantidade": 2,
+    "nota_media": 3.0,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1952
+  },
+  "0100": {
     "numeracao": "0100",
     "titulo": "Jogos Vorazes",
     "genero": "Distopia",
     "autor": "Suzanne Collins",
     "editora": "Rocco",
-    "quantidade": 5
+    "quantidade": 5,
+    "nota_media": 4.5,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 2008
   },
   "0101": {
     "numeracao": "0101",
@@ -845,7 +1214,11 @@
     "genero": "Distopia",
     "autor": "Suzanne Collins",
     "editora": "Rocco",
-    "quantidade": 4
+    "quantidade": 4,
+    "nota_media": 4.0,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 2009
   },
   "0102": {
     "numeracao": "0102",
@@ -853,7 +1226,11 @@
     "genero": "Distopia",
     "autor": "Suzanne Collins",
     "editora": "Rocco",
-    "quantidade": 4
+    "quantidade": 4,
+    "nota_media": 3.5,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 2010
   },
   "0103": {
     "numeracao": "0103",
@@ -861,7 +1238,11 @@
     "genero": "Distopia",
     "autor": "Veronica Roth",
     "editora": "Rocco",
-    "quantidade": 4
+    "quantidade": 4,
+    "nota_media": 3.5,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 2011
   },
   "0104": {
     "numeracao": "0104",
@@ -869,7 +1250,11 @@
     "genero": "Distopia",
     "autor": "Veronica Roth",
     "editora": "Rocco",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 3.5,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 2012
   },
   "0105": {
     "numeracao": "0105",
@@ -877,7 +1262,11 @@
     "genero": "Distopia",
     "autor": "Veronica Roth",
     "editora": "Rocco",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 3.5,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 2013
   },
   "0106": {
     "numeracao": "0106",
@@ -885,7 +1274,11 @@
     "genero": "Distopia",
     "autor": "James Dashner",
     "editora": "Intrinseca",
-    "quantidade": 4
+    "quantidade": 4,
+    "nota_media": 3.5,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 2009
   },
   "0107": {
     "numeracao": "0107",
@@ -893,7 +1286,11 @@
     "genero": "Distopia",
     "autor": "James Dashner",
     "editora": "Intrinseca",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 3.5,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 2010
   },
   "0108": {
     "numeracao": "0108",
@@ -901,7 +1298,11 @@
     "genero": "Distopia",
     "autor": "James Dashner",
     "editora": "Intrinseca",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 3.5,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 2011
   },
   "0109": {
     "numeracao": "0109",
@@ -909,7 +1310,11 @@
     "genero": "Romance",
     "autor": "Emily Bronte",
     "editora": "Penguin",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 4.5,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1847
   },
   "0110": {
     "numeracao": "0110",
@@ -917,7 +1322,11 @@
     "genero": "Romance",
     "autor": "Charlotte Bronte",
     "editora": "Penguin",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 4.0,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1847
   },
   "0111": {
     "numeracao": "0111",
@@ -925,7 +1334,11 @@
     "genero": "Romance",
     "autor": "Jane Austen",
     "editora": "Penguin",
-    "quantidade": 4
+    "quantidade": 4,
+    "nota_media": 4.5,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1813
   },
   "0112": {
     "numeracao": "0112",
@@ -933,7 +1346,11 @@
     "genero": "Romance",
     "autor": "Jane Austen",
     "editora": "Penguin",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 4.0,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1811
   },
   "0113": {
     "numeracao": "0113",
@@ -941,7 +1358,11 @@
     "genero": "Romance",
     "autor": "Jane Austen",
     "editora": "Penguin",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 4.3,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1815
   },
   "0114": {
     "numeracao": "0114",
@@ -949,7 +1370,11 @@
     "genero": "Romance",
     "autor": "Jane Austen",
     "editora": "Penguin",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 3.4,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1817
   },
   "0115": {
     "numeracao": "0115",
@@ -957,7 +1382,11 @@
     "genero": "Romance",
     "autor": "Charles Dickens",
     "editora": "Penguin",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 2.1,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1861
   },
   "0116": {
     "numeracao": "0116",
@@ -977,7 +1406,11 @@
     "genero": "Romance Historico",
     "autor": "Charles Dickens",
     "editora": "Penguin",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 3.0,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1859
   },
   "0118": {
     "numeracao": "0118",
@@ -985,7 +1418,11 @@
     "genero": "Romance",
     "autor": "Charles Dickens",
     "editora": "Penguin",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 4.2,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1850
   },
   "0119": {
     "numeracao": "0119",
@@ -993,7 +1430,11 @@
     "genero": "Romance",
     "autor": "Oscar Wilde",
     "editora": "Penguin",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 4.4,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1890
   },
   "0120": {
     "numeracao": "0120",
@@ -1001,7 +1442,11 @@
     "genero": "Aventura",
     "autor": "Mark Twain",
     "editora": "Penguin",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 3.0,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1876
   },
   "0121": {
     "numeracao": "0121",
@@ -1009,7 +1454,11 @@
     "genero": "Aventura",
     "autor": "Mark Twain",
     "editora": "Penguin",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 2.6,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1884
   },
   "0122": {
     "numeracao": "0122",
@@ -1017,7 +1466,11 @@
     "genero": "Aventura",
     "autor": "Herman Melville",
     "editora": "Penguin",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 3.5,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1851
   },
   "0123": {
     "numeracao": "0123",
@@ -1025,7 +1478,11 @@
     "genero": "Aventura",
     "autor": "Robert Louis Stevenson",
     "editora": "Penguin",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 3.0,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1883
   }, 
    "0124": {
     "numeracao": "0124",
@@ -1033,7 +1490,11 @@
     "genero": "Aventura",
     "autor": "Julio Verne",
     "editora": "Penguin",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 4.0,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1870
   },
   "0125": {
     "numeracao": "0125",
@@ -1041,7 +1502,11 @@
     "genero": "Aventura",
     "autor": "Julio Verne",
     "editora": "Penguin",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 4.3,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1872
   },
   "0126": {
     "numeracao": "0126",
@@ -1049,7 +1514,11 @@
     "genero": "Aventura",
     "autor": "Julio Verne",
     "editora": "Penguin",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 4.5,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1864
   },
   "0127": {
     "numeracao": "0127",
@@ -1057,7 +1526,11 @@
     "genero": "Aventura",
     "autor": "Daniel Defoe",
     "editora": "Penguin",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 3.8,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1719
   },
   "0128": {
     "numeracao": "0128",
@@ -1065,7 +1538,11 @@
     "genero": "Aventura",
     "autor": "Jonathan Swift",
     "editora": "Penguin",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 3.8,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1726
   },
   "0129": {
     "numeracao": "0129",
@@ -1073,7 +1550,11 @@
     "genero": "Classico",
     "autor": "Miguel de Cervantes",
     "editora": "Penguin",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 4.2,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1605
   },
   "0130": {
     "numeracao": "0130",
@@ -1081,7 +1562,11 @@
     "genero": "Classico",
     "autor": "Dante Alighieri",
     "editora": "Editora 34",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 4.0,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1320
   },
   "0131": {
     "numeracao": "0131",
@@ -1089,7 +1574,11 @@
     "genero": "Classico",
     "autor": "Homero",
     "editora": "Penguin",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 3.5,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": -800
   },
   "0132": {
     "numeracao": "0132",
@@ -1097,7 +1586,11 @@
     "genero": "Classico",
     "autor": "Homero",
     "editora": "Penguin",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 3.5,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": -800
   },
   "0133": {
     "numeracao": "0133",
@@ -1105,7 +1598,11 @@
     "genero": "Classico",
     "autor": "William Shakespeare",
     "editora": "Penguin",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 4.3,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1603
   },
   "0134": {
     "numeracao": "0134",
@@ -1113,7 +1610,11 @@
     "genero": "Classico",
     "autor": "William Shakespeare",
     "editora": "Penguin",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 4.0,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1597
   },
   "0135": {
     "numeracao": "0135",
@@ -1121,7 +1622,11 @@
     "genero": "Classico",
     "autor": "William Shakespeare",
     "editora": "Penguin",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 3.8,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1623
   },
   "0136": {
     "numeracao": "0136",
@@ -1129,7 +1634,11 @@
     "genero": "Classico",
     "autor": "William Shakespeare",
     "editora": "Penguin",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 3.4,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1622
   },
   "0137": {
     "numeracao": "0137",
@@ -1137,7 +1646,11 @@
     "genero": "Classico",
     "autor": "William Shakespeare",
     "editora": "Penguin",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 2.6,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1600
   },
   "0138": {
     "numeracao": "0138",
@@ -1145,7 +1658,11 @@
     "genero": "Classico",
     "autor": "Franz Kafka",
     "editora": "Companhia das Letras",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 4.0,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1915
   },
   "0139": {
     "numeracao": "0139",
@@ -1153,7 +1670,11 @@
     "genero": "Classico",
     "autor": "Franz Kafka",
     "editora": "Companhia das Letras",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 3.5,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1925
   },
   "0140": {
     "numeracao": "0140",
@@ -1161,7 +1682,11 @@
     "genero": "Classico",
     "autor": "Franz Kafka",
     "editora": "Companhia das Letras",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 3.8,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1926
   },
   "0141": {
     "numeracao": "0141",
@@ -1181,7 +1706,11 @@
     "genero": "Classico",
     "autor": "James Joyce",
     "editora": "Penguin",
-    "quantidade": 1
+    "quantidade": 1,
+    "nota_media": 4.2,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1922
   },
   "0143": {
     "numeracao": "0143",
@@ -1189,7 +1718,11 @@
     "genero": "Conto",
     "autor": "James Joyce",
     "editora": "Penguin",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 3.8,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1914
   },
   "0144": {
     "numeracao": "0144",
@@ -1197,7 +1730,11 @@
     "genero": "Romance",
     "autor": "Ernest Hemingway",
     "editora": "Bertrand Brasil",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 3.6,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1926
   },
   "0145": {
     "numeracao": "0145",
@@ -1205,7 +1742,11 @@
     "genero": "Romance",
     "autor": "Ernest Hemingway",
     "editora": "Bertrand Brasil",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 3.8,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1940
   },
   "0146": {
     "numeracao": "0146",
@@ -1213,7 +1754,11 @@
     "genero": "Romance",
     "autor": "Ernest Hemingway",
     "editora": "Bertrand Brasil",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 3.0,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1952
   },
   "0147": {
     "numeracao": "0147",
@@ -1221,7 +1766,11 @@
     "genero": "Romance",
     "autor": "F. Scott Fitzgerald",
     "editora": "Penguin",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 3.7,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1925
   },
   "0148": {
     "numeracao": "0148",
@@ -1229,7 +1778,11 @@
     "genero": "Romance",
     "autor": "F. Scott Fitzgerald",
     "editora": "Penguin",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 3.5,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1934
   },
   "0149": {
     "numeracao": "0149",
@@ -1237,7 +1790,11 @@
     "genero": "Romance",
     "autor": "J.D. Salinger",
     "editora": "Editora do Autor",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 3.0,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1951
   },
   "0150": {
     "numeracao": "0150",
@@ -1245,7 +1802,11 @@
     "genero": "Romance",
     "autor": "Olga Tokarczuk",
     "editora": "Todavia",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 3.8,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 2009
   },
   "0151": {
     "numeracao": "0151",
@@ -1253,7 +1814,11 @@
     "genero": "Romance Historico",
     "autor": "Victor Hugo",
     "editora": "Cosac Naify",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 4.7,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1862
   },
   "0152": {
     "numeracao": "0152",
@@ -1261,7 +1826,11 @@
     "genero": "Romance Historico",
     "autor": "Victor Hugo",
     "editora": "Cosac Naify",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 4.5,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1831
   },
   "0153": {
     "numeracao": "0153",
@@ -1269,7 +1838,11 @@
     "genero": "Romance Historico",
     "autor": "Alexandre Dumas",
     "editora": "Penguin",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 4.2,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1844
   },
   "0154": {
     "numeracao": "0154",
@@ -1277,7 +1850,11 @@
     "genero": "Romance Historico",
     "autor": "Alexandre Dumas",
     "editora": "Penguin",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 4.0,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1844
   },
   "0155": {
     "numeracao": "0155",
@@ -1285,7 +1862,11 @@
     "genero": "Naturalismo",
     "autor": "Emile Zola",
     "editora": "Penguin",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 2.8,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1885
   },
   "0156": {
     "numeracao": "0156",
@@ -1293,7 +1874,11 @@
     "genero": "Naturalismo",
     "autor": "Emile Zola",
     "editora": "Penguin",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 2.3,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1880
   },
   "0157": {
     "numeracao": "0157",
@@ -1301,7 +1886,11 @@
     "genero": "Romance",
     "autor": "Gustave Flaubert",
     "editora": "Penguin",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 3.5,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1857
   },
   "0158": {
     "numeracao": "0158",
@@ -1309,7 +1898,11 @@
     "genero": "Romance",
     "autor": "Gustave Flaubert",
     "editora": "Penguin",
-    "quantidade": 1
+    "quantidade": 1,
+    "nota_media": 1.8,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1869
   },
   "0159": {
     "numeracao": "0159",
@@ -1317,7 +1910,11 @@
     "genero": "Romance",
     "autor": "Stendhal",
     "editora": "Penguin",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 2.0,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1830
   },
   "0160": {
     "numeracao": "0160",
@@ -1325,7 +1922,11 @@
     "genero": "Romance",
     "autor": "Stendhal",
     "editora": "Penguin",
-    "quantidade": 1
+    "quantidade": 1,
+    "nota_media": 3.0,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1839
   },
   "0161": {
     "numeracao": "0161",
@@ -1333,7 +1934,11 @@
     "genero": "Novela",
     "autor": "Liev Tolstoi",
     "editora": "Cosac Naify",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 1.5,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1886
   },
   "0162": {
     "numeracao": "0162",
@@ -1341,7 +1946,11 @@
     "genero": "Novela",
     "autor": "Fiodor Dostoievski",
     "editora": "Editora 34",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 3.0,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1848
   },
   "0163": {
     "numeracao": "0163",
@@ -1349,7 +1958,11 @@
     "genero": "Conto",
     "autor": "Anton Tchekhov",
     "editora": "Cosac Naify",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 4.0,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1899
   },
   "0164": {
     "numeracao": "0164",
@@ -1357,7 +1970,11 @@
     "genero": "Conto",
     "autor": "Anton Tchekhov",
     "editora": "Cosac Naify",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 3.0,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1892
   },
   "0165": {
     "numeracao": "0165",
@@ -1365,7 +1982,11 @@
     "genero": "Romance",
     "autor": "Fiodor Dostoievski",
     "editora": "Editora 34",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media":2.0,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1866
   },
   "0166": {
     "numeracao": "0166",
@@ -1373,7 +1994,11 @@
     "genero": "Ficcao Cientifica",
     "autor": "Brandon Sanderson",
     "editora": "Arqueiro",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 3.5,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 2013
   },
   "0167": {
     "numeracao": "0167",
@@ -1381,7 +2006,11 @@
     "genero": "Fantasia",
     "autor": "Brandon Sanderson",
     "editora": "Arqueiro",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 4.0,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 2005
   },
   "0168": {
     "numeracao": "0168",
@@ -1389,7 +2018,11 @@
     "genero": "Fantasia",
     "autor": "Brandon Sanderson",
     "editora": "Arqueiro",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 3.5,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 2009
   },
   "0169": {
     "numeracao": "0169",
@@ -1397,7 +2030,11 @@
     "genero": "Ficcao Cientifica",
     "autor": "Anthony Doerr",
     "editora": "Intrinseca",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 3.0,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 2014
   },
   "0170": {
     "numeracao": "0170",
@@ -1405,7 +2042,11 @@
     "genero": "Suspense",
     "autor": "Paula Hawkins",
     "editora": "Record",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 3.5,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 2015
   },
   "0171": {
     "numeracao": "0171",
@@ -1413,7 +2054,11 @@
     "genero": "Suspense",
     "autor": "Gillian Flynn",
     "editora": "Intrínseca",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 3.5,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 2012
   },
   "0172": {
     "numeracao": "0172",
@@ -1421,7 +2066,11 @@
     "genero": "Suspense",
     "autor": "Gillian Flynn",
     "editora": "Intrinseca",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 3.0,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 2012
   },
   "0173": {
     "numeracao": "0173",
@@ -1429,7 +2078,11 @@
     "genero": "Suspense",
     "autor": "Thomas Harris",
     "editora": "Record",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 2.0,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1988
   },
   "0174": {
     "numeracao": "0174",
@@ -1437,7 +2090,11 @@
     "genero": "Suspense",
     "autor": "Thomas Harris",
     "editora": "Record",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 3.0,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1999
   },
   "0175": {
     "numeracao": "0175",
@@ -1445,7 +2102,11 @@
     "genero": "Suspense",
     "autor": "Umberto Eco",
     "editora": "Record",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 3.2,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1980
   },
   "0176": {
     "numeracao": "0176",
@@ -1453,7 +2114,11 @@
     "genero": "Suspense",
     "autor": "Umberto Eco",
     "editora": "Record",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 3.4,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1988
   },
   "0177": {
     "numeracao": "0177",
@@ -1473,7 +2138,11 @@
     "genero": "Policial",
     "autor": "Agatha Christie",
     "editora": "HarperCollins",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 3.5,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1937
   },
   "0179": {
     "numeracao": "0179",
@@ -1481,7 +2150,11 @@
     "genero": "Policial",
     "autor": "Agatha Christie",
     "editora": "HarperCollins",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 1.2,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1939
   },
   "0180": {
     "numeracao": "0180",
@@ -1489,7 +2162,11 @@
     "genero": "Policial",
     "autor": "Agatha Christie",
     "editora": "HarperCollins",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 3.0,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1929
   },
   "0181": {
     "numeracao": "0181",
@@ -1497,7 +2174,11 @@
     "genero": "Policial",
     "autor": "Arthur Conan Doyle",
     "editora": "Penguin",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 3.5,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1887
   },
   "0182": {
     "numeracao": "0182",
@@ -1505,7 +2186,11 @@
     "genero": "Policial",
     "autor": "Arthur Conan Doyle",
     "editora": "Penguin",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 3.5,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1902
   },
   "0183": {
     "numeracao": "0183",
@@ -1513,7 +2198,11 @@
     "genero": "Policial",
     "autor": "Arthur Conan Doyle",
     "editora": "Penguin",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 3.5,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1892
   },
   "0184": {
     "numeracao": "0184",
@@ -1521,7 +2210,11 @@
     "genero": "Policial",
     "autor": "Arthur Conan Doyle",
     "editora": "Penguin",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 3.5,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1890
   },
   "0185": {
     "numeracao": "0185",
@@ -1529,7 +2222,11 @@
     "genero": "Romance Historico",
     "autor": "Markus Zusak",
     "editora": "Intrinseca",
-    "quantidade": 5
+    "quantidade": 5,
+    "nota_media": 4.0,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 2005
   },
   "0186": {
     "numeracao": "0186",
@@ -1537,7 +2234,11 @@
     "genero": "Biografia",
     "autor": "Anne Frank",
     "editora": "Record",
-    "quantidade": 4
+    "quantidade": 4,
+    "nota_media": 4.0,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1947
   },
   "0187": {
     "numeracao": "0187",
@@ -1545,7 +2246,11 @@
     "genero": "Biografia",
     "autor": "Primo Levi",
     "editora": "Rocco",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 4.0,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1947
   },
   "0188": {
     "numeracao": "0188",
@@ -1565,7 +2270,11 @@
     "genero": "Quadrinhos",
     "autor": "Art Spiegelman",
     "editora": "Companhia das Letras",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 2.7,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1986
   },
   "0190": {
     "numeracao": "0190",
@@ -1573,7 +2282,11 @@
     "genero": "Quadrinhos",
     "autor": "Marjane Satrapi",
     "editora": "Companhia das Letras",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 3.5,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 2000
   },
   "0191": {
     "numeracao": "0191",
@@ -1581,7 +2294,11 @@
     "genero": "Quadrinhos",
     "autor": "Alan Moore",
     "editora": "Panini",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 4.0,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1986
   },
   "0192": {
     "numeracao": "0192",
@@ -1589,7 +2306,11 @@
     "genero": "Quadrinhos",
     "autor": "Neil Gaiman",
     "editora": "Panini",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 4.0,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1989
   },
   "0193": {
     "numeracao": "0193",
@@ -1597,7 +2318,11 @@
     "genero": "Fantasia",
     "autor": "Neil Gaiman",
     "editora": "Intrinseca",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 3.0,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 2001
   },
   "0194": {
     "numeracao": "0194",
@@ -1605,7 +2330,11 @@
     "genero": "Fantasia",
     "autor": "Neil Gaiman",
     "editora": "Intrinseca",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 2.0,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 2001
   },
   "0195": {
     "numeracao": "0195",
@@ -1613,7 +2342,11 @@
     "genero": "Fantasia",
     "autor": "Neil Gaiman",
     "editora": "Rocco",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 3.5,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 2002
   },
   "0196": {
     "numeracao": "0196",
@@ -1621,7 +2354,11 @@
     "genero": "Fantasia",
     "autor": "Neil Gaiman",
     "editora": "Intrinseca",
-    "quantidade": 2
+    "quantidade": 2,
+    "nota_media": 3.0,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 1990
   },
   "0197": {
     "numeracao": "0197",
@@ -1641,7 +2378,11 @@
     "genero": "Mitologia",
     "autor": "Rick Riordan",
     "editora": "Intrinseca",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 3.9,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 2008
   },
   "0199": {
     "numeracao": "0199",
@@ -1649,7 +2390,11 @@
     "genero": "Mitologia",
     "autor": "Rick Riordan",
     "editora": "Intrinseca",
-    "quantidade": 4
+    "quantidade": 4,
+    "nota_media": 4.5,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 2005
   },
   "0200": {
     "numeracao": "0200",
@@ -1657,7 +2402,11 @@
     "genero": "Mitologia",
     "autor": "Rick Riordan",
     "editora": "Intrinseca",
-    "quantidade": 3
+    "quantidade": 3,
+    "nota_media": 4.4,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 2006
   },
   "251": {
     "numeracao": "251",
@@ -1665,6 +2414,10 @@
     "genero": "Auto ajuda",
     "autor": "Globo",
     "editora": "Criança esperança",
-    "quantidade": 10
+    "quantidade": 10,
+    "nota_media": 4.0,
+    "total_avaliacoes": 1,
+    "contagem_emprestimos": 0,
+    "ano": 2000
   }
-}
+} 
