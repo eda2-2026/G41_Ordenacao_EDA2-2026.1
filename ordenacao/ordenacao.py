@@ -125,7 +125,6 @@ def mergesort(lista: list, chave=None, reverso: bool = False) -> list:
 def heapsort(lista: list, chave=None, reverso: bool = False) -> list:
     if chave is None:
         chave = lambda x: x
-
     def heapify(arr: list, n: int, i: int) -> None:
         extremidade = i
         esq = 2 * i + 1
@@ -145,23 +144,17 @@ def heapsort(lista: list, chave=None, reverso: bool = False) -> list:
             arr[i], arr[extremidade] = arr[extremidade], arr[i]
             heapify(arr, n, extremidade)
 
+    copia = list(lista)
+    n = len(copia)
 
-        copia = list(lista)
-        n = len(copia)
+    for i in range(n // 2 - 1, -1, -1):
+        heapify(copia, n, i)
 
+    for i in range(n - 1, 0, -1):
+        copia[i], copia[0] = copia[0], copia[i]
+        heapify(copia, i, 0)
 
-        for i in range(n // 2 - 1, -1, -1):
-            heapify(copia, n, i)
-
-
-        for i in range(n - 1, 0, -1):
-            copia[i], copia[0] = copia[0], copia[i]
-            heapify(copia, i, 0)
-
-
-        return copia
-
-
+    return copia
 
 
 def registrarAvaliacao(livros: dict, livro_id: str, nota: float) -> dict | None:
@@ -275,52 +268,61 @@ def ranking_por_popularidade(livros: dict | list, reverso: bool = True) -> list:
 
 
 def radix_sort_por_ano(lista: list, reverso: bool = False) -> list:
-   def get_ano(livro):
-       val = livro.get("ano", 0)
-       if val is None:
-           return 0
-       try:
-           return max(0, int(val))
-       except (ValueError, TypeError):
-           return 0
 
+    def get_ano(livro: dict) -> int:
+        val = livro.get("ano", 0)
+        if val is None:
+            return 0
+        try:
+            return max(0, int(val))
+        except (ValueError, TypeError):
+            return 0
 
-   def msd_radix_recursivo(itens: list, exp: int) -> list:
-       if len(itens) <= 1 or exp == 0:
-           return itens
+    def maior_exp(arr: list) -> int:
+        maximo = 0
+        for livro in arr:
+            ano = get_ano(livro)
+            if ano > maximo:
+                maximo = ano
+        exp = 1
+        while maximo // exp >= 10:
+            exp *= 10
+        return exp
 
+    def msd_recursivo(arr: list, exp: int) -> list:
+        if len(arr) <= 1 or exp == 0:
+            return arr
 
-       baldes = [[] for _ in range(10)]
-       for livro in itens:
-           digito = (get_ano(livro) // exp) % 10
-           baldes[digito].append(livro)
+        # 10 baldes para os dígitos 0-9
+        baldes = [[] for _ in range(10)]
 
+        for livro in arr:
+            digito = (get_ano(livro) // exp) % 10
+            baldes[digito].append(livro)
 
-       resultado = []
-       if reverso:
-           for balde in reversed(baldes):
-               resultado.extend(msd_radix_recursivo(balde, exp // 10))
-       else:
-           for balde in baldes:
-               resultado.extend(msd_radix_recursivo(balde, exp // 10))
-       return resultado
+        resultado = []
+        for balde in baldes:
+            # ordena cada balde pelo próximo dígito (recursão)
+            sub = msd_recursivo(balde, exp // 10)
+            for item in sub:
+                resultado.append(item)
 
+        return resultado
 
-   if not lista:
-       return []
+    if not lista:
+        return []
 
+    copia = list(lista)
 
-   max_ano = max(get_ano(l) for l in lista)
-   if max_ano == 0:
-       return list(lista)
+    # descobre o expoente do dígito mais significativo
+    exp_inicial = maior_exp(copia)
 
+    ordenado = msd_recursivo(copia, exp_inicial)
 
-   max_exp = 1
-   while (max_ano // max_exp) >= 10:
-       max_exp *= 10
+    if reverso:
+        ordenado.reverse()
 
-
-   return msd_radix_recursivo(list(lista), max_exp)
+    return ordenado
 
 
 
