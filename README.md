@@ -1,11 +1,10 @@
 🇧🇷 **Português** | 🇺🇸 [English](README-eng.md)
-<H1> Trabalho de Algoritmo de Busca - Sistema de Biblioteca (SB) 📚 </H1>
+<H1> Trabalho de Algoritmos de Ordenação - Sistema de Biblioteca (SB) 📚 </H1>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Status-Concluido-green?style=flat-square" alt="Status">
   <img src="https://img.shields.io/badge/Python-3.10+-blue?style=flat-square&logo=python&logoColor=white" alt="Python">
-  <img src="https://img.shields.io/badge/Busca-BST%20%2F%20Fuzzy-orange?style=flat-square" alt="Busca">
-</p>
+<img src="https://img.shields.io/badge/Ordenação-Quick%20%7C%20Heap%20%7C%20Radix-purple?style=flat-square" alt="Ordenação"></p>
 
 <p align="center">
   <img src="https://i.postimg.cc/YCsvxJLN/Captura-de-Tela-2026-04-04-a-s-02-39-39.png" width="500">
@@ -19,19 +18,22 @@
 
 ## 📝 Descrição
 
-O ***Sistema de Biblioteca (SB)*** é uma aplicação em Python pensada para ser rápida e fácil de usar. Com uma interface moderna em modo escuro, ele foi projetado para que tudo aconteça de forma fluida, sem travamentos ou esperas desnecessárias.
-Nessa nova versão, o sistema deixa de ser apenas um buscador simples e passa a funcionar como uma solução mais completa. Onde se baseia em três ideias principais: as **árvores binárias de busca**, que organizam os códigos dos livros e permitem encontrar registros de forma muito ágil; os ***índices invertidos**, que ajudam a localizar palavras-chave sem precisar percorrer toda a base; e a **busca aproximada***, que consegue entender o que o usuário quis dizer mesmo com erros de digitação ou nomes incompletos.
-No fim, o sistema consegue lidar com grandes quantidades de livros sem perder desempenho, mantendo um equilíbrio entre eficiência técnica e uma experiência de uso simples e agradável no dia a dia.
+O **Sistema de Biblioteca (SB)** é uma aplicação em Python pensada para ser rápida e fácil de usar. Com uma interface moderna em modo escuro, ele foi projetado para que a navegação e a organização do acervo aconteçam de forma fluida, sem travamentos ou esperas desnecessárias.
 
-## 💡 Diferenciais Técnicos
+Nesta nova versão, o foco principal do sistema é a **estruturação e ordenação dinâmica dos dados**. Para lidar com diferentes tipos de informações (textos, números inteiros, valores decimais e datas), o sistema aplica abordagens específicas para cada coluna da tabela. Isso inclui o uso de **Quick Sort** para categorização alfabética, **Heap Sort** para ranqueamento preciso de notas e **Radix Sort (MSD)** para ordenação cronológica.
 
-O grande destaque desta atualização é o Módulo de Busca Avançada, que utiliza diferentes estratégias dependendo da entrada do usuário:
+No fim, o sistema consegue listar, reorganizar e inverter grandes quantidades de livros instantaneamente, mantendo um equilíbrio perfeito entre eficiência algorítmica e uma experiência de uso simples e agradável no dia a dia.
 
-- ***Árvore Binária de Busca (BST):*** Implementada do zero para buscas exatas por numeração e buscas por intervalo;
-- ***Índice Invertido:*** Técnica utilizada por grandes buscadores, como Google para encontrar palavras-chave em títulos e autores instantaneamente, sem percorrer a lista inteira; e
-- ***Busca Fuzzy (Levenshtein):*** Algoritmo de similaridade de strings que encontra resultados mesmo se o usuário digitar o nome do livro com erros ortográficos.
+## 💡 Diferenciais Técnicos (Algoritmos de Ordenação)
 
-## 🌐 Prints das Buscas 
+O grande destaque desta atualização é o Módulo de Ordenação, que utiliza diferentes estratégias algorítmicas dependendo da coluna selecionada pelo usuário na interface:
+
+- **Quick Sort:** Implementado como o algoritmo principal (faz-tudo) para ordenação de *strings* (Título, Autor, Gênero) e inteiros simples (Numeração de ID e Quantidade de Empréstimos). Garante velocidade na organização alfabética e por popularidade.
+- **Heap Sort:** Estruturado especificamente para organizar os livros baseando-se em números de ponto flutuante (*floats*). É disparado quando o usuário deseja visualizar as maiores ou menores Notas Médias de avaliação do acervo.
+- **Radix Sort (MSD):** Implementado com a abordagem recursiva *Most Significant Digit* utilizando a separação em *buckets* (baldes). É o algoritmo ideal para ordenação de números inteiros de tamanho fixo, sendo aplicado exclusivamente para ordenar os Anos de Publicação.
+- **Merge Sort:** Algoritmo de divisão e conquista implementado na biblioteca principal do sistema, garantindo flexibilidade e estabilidade como alternativa base para processamento de dados.
+
+## 🌐 Demonstração da Ordenação
 
 <p align="center">
   <img src="https://i.postimg.cc/SQrYLNBB/image.png" width="600">
@@ -43,12 +45,12 @@ O grande destaque desta atualização é o Módulo de Busca Avançada, que utili
 
 ## 🎯 Funcionalidades
 
-- ***Gestão de Acervo:*** Cadastro detalhado de livros, com título, autor, gênero e estoque com indexação automática para buscas instantâneas;
-- ***Registro de Alunos:*** Controle centralizado de usuários, armazenando matrículas e dados de contato de forma segura;
-- ***Edição Dinâmica:*** Permite alterar informações de livros e alunos já cadastrados, mantendo a base de dados sempre atualizada;
-- ***Controle de Empréstimos:*** Registro ágil de saídas, associando o aluno ao livro e documentando a data de retirada;
-- ***Gestão de Devoluções:*** Baixa automática de empréstimos com atualização imediata da disponibilidade no acervo; e
-- ***Consultas e Listagens:*** Visualização organizada de todos os dados cadastrados, facilitando a auditoria de alunos, livros e movimentações.
+- **Ordenação Dinâmica em Tabela:** Clique em qualquer cabeçalho da tabela de livros para organizar o acervo instantaneamente, com suporte a ordenação reversa (Crescente/Decrescente ou A-Z/Z-A).
+- **Gestão de Acervo:** Cadastro detalhado de livros, com título, autor, gênero e estoque.
+- **Registro de Alunos:** Controle centralizado de usuários, armazenando matrículas e dados de contato de forma segura.
+- **Edição Dinâmica:** Permite alterar informações de livros e alunos já cadastrados, mantendo a base de dados sempre atualizada.
+- **Controle de Empréstimos e Popularidade:** Registro ágil de saídas, associando o aluno ao livro e contabilizando automaticamente a quantidade de vezes que a obra foi emprestada.
+- **Gestão de Devoluções e Avaliações:** Baixa automática de empréstimos com a funcionalidade integrada para o aluno registrar uma avaliação de 0 a 5 estrelas para a obra devolvida.
 
 ---
 
@@ -60,9 +62,8 @@ Antes de executar o programa, certifique-se de que você possui os seguintes req
 
 **2. Dependências:**
 
-- PySide6;
-- qdarktheme; e
-- rapidfuzz.
+- PySide6; e 
+- qdarktheme.
 
 **3.Sistema Operacional: Windows, macOS ou Linux.**
 
@@ -95,7 +96,7 @@ Se não tiver o Python 3.10, você pode baixá-lo [aqui](https://www.python.org/
 Primeiro, clone o repositório do projeto para a sua máquina. Para isso, abra o terminal (ou prompt de comando no Windows) e execute o comando abaixo:
 
 ```bash
-git clone https://github.com/eda2-2026/G41_Busca_EDA2-2026.1.git
+git clone https://github.com/eda2-2026/G41_Ordenacao_EDA2-2026.1.git
 ```
 
 **3. Instale as dependências:**
@@ -117,12 +118,6 @@ pip install pyside6
 
 ```bash
 pip install qdarktheme
-```
-
-* **Instalar o rapidfuzz**
-
-```bash
-pip install rapidfuzz
 ```
 
 **4. Executar o programa**
